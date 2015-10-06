@@ -1,0 +1,23 @@
+<html>
+
+<script>
+function favfoods() {
+  var mylist=document.getElementById("Mylist");
+  document.getElementById("favorite").value=mylist.options[mylist.selectedIndex].text;
+}
+
+</script>
+
+  <body>
+    <form>
+      Select your favorite foods!
+      <select id="Mylist" onchange="favfoods()">
+        <option>Pizza</option>
+        <option>Mac and Cheese</option>
+        <option>Wine</option>
+      </select>
+      <p>Your fave food is: <input type='test' id='favorite' size="20"></p>
+    </form>
+
+  </body>
+</html>
