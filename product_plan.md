@@ -13,4 +13,5 @@
 
 3. User Personas
   - Main target users are busy pet owners who occasionally need to remotely care for their pet, and who are interested in more data to track food intake.- Not suitable for longterm care, but for unexpected events that might keep you from getting home to feed a pet, or the occasional night away.
+  - Having the ability to set timed feedings would also be helpful.
   - The tracking ability is good for multi-person household with pets who are deceitful about how often they have been fed.
