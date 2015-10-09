@@ -6,7 +6,7 @@ GoogleDoc with project notes(https://docs.google.com/document/d/1VfyTpYPLiKyFfcS
 Busy pet owners (cats or small dogs) often have to rely on leaving a lot of food out for their pets, or counting on friends to stop by when they are out of town or working late. Additionally, tracking a pet's weight and health can difficult if they are extrememly fluffy. This product, a combination of hardware and software, takes care of two issues. A DIY remote controlled feeder allows you to feed your pet remotely, and keep track of how many feedings they have receieved. The web app provides the mechanism for remotely feeding.
 
 ## Market Research  
-  _ Competition:
+  - Competition:
     - Programmable commercial feeders and other pet trackers can be purchased for pets. Very few come with a web or smartphone interface for managing the hardware.
     - A feeder that responds to smartphone requests was created with funding from Indigogo and a three person dev team, costs $150. It doesn't have browser support (only iOS), and complaints of it being unrealiable.
   - User Issues:
