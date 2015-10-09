@@ -8,4 +8,6 @@
 - Set up Your Pi
   - Great instructions here: https://www.raspberrypi.org/
   - Format SD card and set up OS
+  - Configure Ethernet or Wifi
+
 
