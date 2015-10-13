@@ -2,10 +2,11 @@
 
 GoogleDoc with project notes(https://docs.google.com/document/d/1VfyTpYPLiKyFfcS762wjLxfRX27s6k7Z9VBCH8pTmP8/edit?usp=sharing)
 
-1. The problem -- busy pet owners (cats or small dogs) often have to rely on leaving a lot of food out for their pets, or counting on friends to stop by when they are out of town or working late. Additionally, tracking a pet's weight and health can difficult if they are extrememly fluffy. This product, a combination of hardware and software, takes care of two issues. A DIY remote controlled feeder allows you to feed your pet remotely, and keep track of how many feedings they have receieved. The web app provides the mechanism for remotely feeding.
+## Problem Statement  
+Busy pet owners (cats or small dogs) often have to rely on leaving a lot of food out for their pets, or counting on friends to stop by when they are out of town or working late. Additionally, tracking a pet's weight and health can difficult if they are extrememly fluffy. This product, a combination of hardware and software, takes care of two issues. A DIY remote controlled feeder allows you to feed your pet remotely, and keep track of how many feedings they have receieved. The web app provides the mechanism for remotely feeding.
 
-2. Market Research
-  _ Competition:
+## Market Research  
+  - Competition:
     - Programmable commercial feeders and other pet trackers can be purchased for pets. Very few come with a web or smartphone interface for managing the hardware.
     - A feeder that responds to smartphone requests was created with funding from Indigogo and a three person dev team, costs $150. It doesn't have browser support (only iOS), and complaints of it being unrealiable.
   - User Issues:
@@ -17,7 +18,7 @@ GoogleDoc with project notes(https://docs.google.com/document/d/1VfyTpYPLiKyFfcS
     - Login via FB or Twitter may allow for social media posting, another feature I have not seen on the market.
 
 
-3. User Personas
+## User Personas  
   - Main target users are busy pet owners who occasionally need to remotely care for their pet, or who are interested in tracking food intake/feedings.
   - Not suitable for longterm care, but for unexpected events that might keep you from getting home to feed a pet, or the occasional night away.
   - Pet owners wanting the ability to set timed feedings.
@@ -34,11 +35,11 @@ GoogleDoc with project notes(https://docs.google.com/document/d/1VfyTpYPLiKyFfcS
 - High level plan for transfer of data from browser to Pi
 
 ## Plan for next week:
--Hardware
+Hardware
   - Complete starter projects with Pi
     - Download Python libraries to aid in GPIO usage
   - Build up to moving servo using external power source
-- Software
+Software
   - Begin build out of Rails app
     - Home page design
     - Endpoints for sending true/false for whether a feed request has been made
