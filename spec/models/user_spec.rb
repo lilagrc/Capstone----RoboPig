@@ -2,11 +2,11 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe "model associations" do
-    it "has one to many pets" do
-      cat = Pet.create(name: "Mulder", breed: "Siamese")
-      user = User.create(name: "Scully", email: "scully@xfiles.com")
-      user.pets << cat
+    let(:user)   { build(:user) }
+    let(:pet)    { build(:pet)}
 
+    it "has one to many pets" do
+      user.pets << pet
       expect(user.pets.length).to eq 1
       expect(user.pets.first.name).to eq "Mulder"
     end
