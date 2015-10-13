@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20151007203450) do
 
   create_table "pets", force: :cascade do |t|
     t.string   "name"
-    t.string   "type"
+    t.string   "breed"
     t.integer  "weight"
     t.integer  "user_id"
     t.datetime "created_at", null: false
