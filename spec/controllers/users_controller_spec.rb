@@ -8,11 +8,11 @@ RSpec.describe UsersController, type: :controller do
 
     before :each do
       log_in
-      get :index
+      get :show, :id => 1
     end
 
-    it "renders the index page" do
-      expect(subject).to render_template :index
+    it "renders the show page" do
+      expect(subject).to render_template :show
       expect(response).to have_http_status(200)
     end
 

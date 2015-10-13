@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
-  def index
+  def show
     @user = User.find(session[:user_id])
-    raise
+    @pets = @user.pets
   end
 end

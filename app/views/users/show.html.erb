@@ -1,0 +1,5 @@
+<h1>Hi <%= @user.name %></h1>
+
+<%= link_to "Add a pet", new_user_pet_path(session[:user_id]) %>
+
+<p>Your pet is <%= @pets.first.name %></p>

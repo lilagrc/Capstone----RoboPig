@@ -1,1 +1,15 @@
-<h1>test form</h1>
+<h1>Add a New Pet</h1>
+
+<%= form_for @pet, url: user_pets_path(session[:user_id]) do |f| %>
+  <div class="form-group">
+    <fieldset>
+      <%= f.label :name %>
+      <%= f.text_field :name, class:"form-control" %>
+
+      <%= f.label :breed %>
+      <%= f.text_field :breed, class:"form-control" %>
+
+      <%= f.submit "Submit", class: "btn btn-default"%>
+    </fieldset>
+  </div>
+<% end %>
