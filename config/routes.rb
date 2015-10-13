@@ -7,8 +7,8 @@ Rails.application.routes.draw do
 
   get  "auth/developer", to: "sessions#create", as: 'login'
   post "/auth/developer/callback", to: "sessions#create"
-  # get "auth/developer/callback", to: "sessions#create", as: 'login'
 
+  get "user/profile", to: "users#index", as: "profile"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
