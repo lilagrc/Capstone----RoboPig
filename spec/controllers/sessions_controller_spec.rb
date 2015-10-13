@@ -35,4 +35,15 @@ RSpec.describe SessionsController, type: :controller do
       end
     end
   end
+
+  describe "#destroy" do
+    it "destroys the current session" do
+      user = create :user
+      session[:user_id] = user.id
+
+      get :destroy
+
+      expect(session[:user_id]).to eq nil
+    end
+  end
 end
