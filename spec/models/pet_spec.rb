@@ -18,5 +18,4 @@ RSpec.describe Pet, type: :model do
       expect(pet.user.id).to eq 1
     end
   end
-
 end
