@@ -10,7 +10,15 @@ FactoryGirl.define do
     name "Mulder"
     breed "Siamese"
   end
+
+  factory :feeding do
+    id 1
+    amount 2
+    pet_id 1
+  end
 end
+
+
 
 
 
