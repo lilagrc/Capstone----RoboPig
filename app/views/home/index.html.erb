@@ -7,8 +7,12 @@
         <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><%= link_to "Login", login_path %></li>
-        <li><%= link_to "Profile", profile_path %></li>
+        <% unless logged_in? %>
+          <li><%= link_to "Login", login_path %></li>
+        <% else %>
+          <li><%= link_to "Profile", profile_path(session[:user_id]) %></li>
+          <li><%= link_to "Log Out",  %></li>
+        <% end %>
       </ul>
     </div>
   </div>

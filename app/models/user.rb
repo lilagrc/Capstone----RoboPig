@@ -1,4 +1,9 @@
 class User < ActiveRecord::Base
+  #Validations
+  validates :name, presence: true
+  validates :email, presence: true
+
+  #Associations
   has_many :pets
 
   def self.find_or_create_user(auth_hash)
