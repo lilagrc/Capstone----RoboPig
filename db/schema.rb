@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151014221550) do
+ActiveRecord::Schema.define(version: 20151014232728) do
 
   create_table "feedings", force: :cascade do |t|
     t.datetime "date"
@@ -30,12 +30,23 @@ ActiveRecord::Schema.define(version: 20151014221550) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tweets", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "nickname"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.string   "uid"
+    t.string   "provider"
+    t.string   "token"
+    t.string   "secret"
+    t.string   "profile_image"
   end
 
 end

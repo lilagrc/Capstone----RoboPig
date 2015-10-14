@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get  "auth/:provider", to: "sessions#create", as: 'login'
-  post "/auth/:provider/callback", to: "sessions#create"
+  get "/auth/:provider/callback", to: "sessions#create"
 
   # get "user/:id/profile", to: "users#index", as: "profile"
   # get "user/:id/profile/new_pet", to: "pets#new", as: "new_pet"

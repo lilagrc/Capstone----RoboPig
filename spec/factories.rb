@@ -1,4 +1,7 @@
-FactoryGirl.define do
+FactoryGirl.define do  factory :tweet do
+    
+  end
+
   factory :user do
     id 1
     name "Scully"
