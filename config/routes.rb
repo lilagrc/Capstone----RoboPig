@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
-  get  "auth/developer", to: "sessions#create", as: 'login'
-  post "/auth/developer/callback", to: "sessions#create"
+  get  "auth/:provider", to: "sessions#create", as: 'login'
+  post "/auth/:provider/callback", to: "sessions#create"
 
   # get "user/:id/profile", to: "users#index", as: "profile"
   # get "user/:id/profile/new_pet", to: "pets#new", as: "new_pet"
