@@ -9,8 +9,8 @@ class User < ActiveRecord::Base
   def self.find_or_create_user(auth_hash)
     uid = auth_hash["uid"]
 
-    user = User.where(id: uid).first_or_initialize
-    user.email = auth_hash["info"]["email"]
+    user = User.where(uid: uid).first_or_initialize
+    user.nickname = auth_hash["info"]["nickname"]
     user.name = auth_hash["info"]["name"]
 
     return user.save ? user : nil
