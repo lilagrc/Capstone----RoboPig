@@ -1,5 +1,3 @@
-require 'twitter_client'
-
 class User < ActiveRecord::Base
   #Validations
   validates :name, presence: true

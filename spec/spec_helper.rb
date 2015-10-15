@@ -56,7 +56,7 @@ config.before(:suite) do
   OmniAuth.config.mock_auth[:developer] = OmniAuth::AuthHash.new({
     :provider => 'developer',
     :uid => 'a@b.com',
-    info: {email: "a@b.com", name: "Mulder"},
+    info: {email: "a@b.com", name: "BEAST"},
     credentials: { token: '123354655.633'}
     })
 

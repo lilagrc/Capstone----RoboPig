@@ -1,11 +1,11 @@
 FactoryGirl.define do  factory :tweet do
-    
+
   end
 
   factory :user do
     id 1
     name "Scully"
-    email "scully@xfiles.com"
+    uid "1234"
   end
 
   factory :pet do

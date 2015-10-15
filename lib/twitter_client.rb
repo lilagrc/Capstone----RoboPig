@@ -1,3 +1,0 @@
-class TwitterClient
-
-end
