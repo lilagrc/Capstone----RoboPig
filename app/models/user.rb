@@ -1,4 +1,4 @@
-require 'lib/twitter_client'
+require 'twitter_client'
 
 class User < ActiveRecord::Base
   #Validations
@@ -22,5 +22,14 @@ class User < ActiveRecord::Base
       )
 
     return user.save ? user : nil
+  end
+
+  def twitter
+    @client ||= Twitter::REST::Client.new do |config|
+      config.consumer_key        = ENV["TWITTER_CLIENT_ID"]
+      config.consumer_secret     = ENV["TWITTER_CLIENT_SECRET"]
+      config.access_token        = token
+      config.access_token_secret = secret
+    end
   end
 end

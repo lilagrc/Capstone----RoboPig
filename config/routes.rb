@@ -16,6 +16,9 @@ Rails.application.routes.draw do
     resources :pets, only: [:new, :create]
   end
 
+  resources :tweets, only: [:new, :edit, :create]
+
+
   get "logout", to: "sessions#destroy", as: "logout"
 
   # Example of regular route:

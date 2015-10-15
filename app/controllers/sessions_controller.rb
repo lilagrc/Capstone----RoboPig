@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
     if auth_hash.uid
       @user = User.find_or_create_user(auth_hash)
-      raise
+
       if @user
         session[:user_id] = @user.id
       end
