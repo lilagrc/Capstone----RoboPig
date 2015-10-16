@@ -1,4 +1,7 @@
-FactoryGirl.define do  factory :tweet do
+FactoryGirl.define do  factory :request do
+    body "MyString"
+  end
+  factory :tweet do
 
   end
 
