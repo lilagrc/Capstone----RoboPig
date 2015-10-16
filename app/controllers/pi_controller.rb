@@ -2,7 +2,11 @@ class PiController < ApplicationController
 
 # create method to update data sent to turn on LEDs
 def new_request
-  session["request"] = params["request"]["body"]
+  if params["request"]["body"] == "true"
+    session["request"] = true
+  else
+    session["request"] = false
+  end
   redirect_to root_path
 end
 

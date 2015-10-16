@@ -33,10 +33,10 @@
   <div class="col-xs-12 col-md-8">
   <%= form_for @request, url: new_request_path do |f| %>
     <%= f.label "True" %>
-    <%= f.radio_button(:body, "true") %>
+    <%= f.radio_button(:body, true) %>
 
     <%= f.label "False" %>
-    <%= f.radio_button(:body, "false") %>
+    <%= f.radio_button(:body, false) %>
 
     <%= f.submit %>
   <% end %>
