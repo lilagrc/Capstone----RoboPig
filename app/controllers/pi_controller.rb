@@ -9,7 +9,6 @@ def new_request
 #   end
 
   session["request"] = params["request"]["body"]
-  raise
   redirect_to root_path
 end
 
