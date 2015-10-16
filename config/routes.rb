@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   get "logout", to: "sessions#destroy", as: "logout"
 
+  get "/run_pi", to: "pi#run_pi", as: "pi"
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
