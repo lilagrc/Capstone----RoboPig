@@ -13,7 +13,7 @@ def new_request
 end
 
 def run_pi
-  res = { feed: session["request"] }
+  res = { session["request"]: "value" }
   render json: res
 end
 
