@@ -14,7 +14,10 @@ end
 
 def run_pi
   request = session["request"]
-  run = {feed: request}
+  if request = "true"
+    run = {feed: true}
+  else
+    run = {feed: false}
 
   render json: run
 end
