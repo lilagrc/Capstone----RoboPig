@@ -18,7 +18,7 @@ def run_pi
     run = {feed: true}
   else
     run = {feed: false}
-
+  end
   render json: run
 end
 
