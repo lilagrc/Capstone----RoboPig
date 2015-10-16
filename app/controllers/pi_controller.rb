@@ -13,13 +13,8 @@ def new_request
 end
 
 def run_pi
-  request = session["request"]
-  if request == "true"
-    run = {feed: "yes"}
-  elsif request == "false"
-    run = {feed: "no"}
-  end
-  render json: run
+  res = { feed: session["request"] }
+  render json: res
 end
 
 # render json: {}, status: 400
