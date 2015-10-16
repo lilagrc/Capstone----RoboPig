@@ -12,7 +12,7 @@ end
 
 def run_pi
   request = session["request"]
-  run = {run: request}
+  run = {feed: request}
 
   render json: run
 end
