@@ -14,7 +14,7 @@ end
 
 def run_pi
   request = session["request"]
-  if request = "true"
+  if request == "true"
     run = {feed: true}
   else
     run = {feed: false}
