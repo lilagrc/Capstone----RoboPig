@@ -31,9 +31,9 @@ ActiveRecord::Schema.define(version: 20151016211653) do
   end
 
   create_table "requests", force: :cascade do |t|
-    t.string   "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "body",       default: "do nothing"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
   create_table "tweets", force: :cascade do |t|

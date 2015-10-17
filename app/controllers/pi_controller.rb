@@ -1,21 +1,29 @@
 class PiController < ApplicationController
 
 # create method to update db to feed request
-def feed_request
-  request = Request.first
-  request.body = "feed"
-end
+  def feed_request
+    request = Request.first_or_initialize(id: 1, body: "placeholder")
+    request.body = "feed"
+    request.save
+    raise
+    redirect_to root_path
+  end
 
-  session["request"] = params["request"]["body"]
+  # method to update db with info on timer changes
+  def set_timer
 
-  redirect_to root_path
-end
 
-def run_pi
-  ## try a database record that gets flipped
-  res = { feed: true }
-  render json: res
-end
+  end
 
-# render json: {}, status: 400
+  # method to send pi information from request db
+  def run_pi
+
+    render json: res
+  end
+
+  def confirmation
+
+    #remove body data from db if response is success
+  end
+
 end

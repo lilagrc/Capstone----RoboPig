@@ -31,8 +31,7 @@
 
 <div class="row">
   <div class="col-xs-12 col-md-8">
-    <%= button_to "Feed Cat",  %>
-  <% end %>
+    <%= button_to "Feed Cat", feed_request_path, method: :put, data: "feed" %>
   </div>
 </div>
 
