@@ -17,6 +17,8 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+ //= depend_on_asset "cats_jumping.jpg"
+
  body {
   background: url('cats_jumping.jpg')no-repeat;
   background-size: 100%;
