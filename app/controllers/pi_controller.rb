@@ -5,7 +5,7 @@ class PiController < ApplicationController
     request = Request.first_or_initialize(id: 1, body: "placeholder")
     request.body = "feed"
     request.save
-    raise
+
     redirect_to root_path
   end
 
@@ -17,7 +17,9 @@ class PiController < ApplicationController
 
   # method to send pi information from request db
   def run_pi
+    request = Request.first.body
 
+    res = { request: request}
     render json: res
   end
 

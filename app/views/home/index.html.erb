@@ -1,7 +1,6 @@
 <div class="row">
   <div></div>
   <div class="page-header">
-    <h1>Robo Feed Pet</h1>
     <div class="dropdown">
       <button type="button" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" aria-label="Left Align">
         <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
@@ -15,25 +14,25 @@
         <% end %>
       </ul>
     </div>
+    <h1 id="header_text">Robo Feeder <br><small>Remotely feed your furry friend</small></h1>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-xs-12 col-md-8">
-    <h1>BearPig has been fed x numbers today</h1>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12 col-md-8">
-    <h1>Feed Request</h1>
+  <div class="col-xs-12 col-md-8", id="feed_details">
+    <h2>Your pet has been fed x numbers today</h2>
   </div>
 </div>
 
+<br>
+<br>
+
 <div class="row">
   <div class="col-xs-12 col-md-8">
-    <%= button_to "Feed Cat", feed_request_path, method: :put, data: "feed" %>
+    <%= button_to "Feed Cat", feed_request_path, method: :put, data: "feed", class: "btn btn-default" %>
   </div>
 </div>
+
 
 
 
