@@ -21,8 +21,12 @@ Rails.application.routes.draw do
 
   get "logout", to: "sessions#destroy", as: "logout"
 
-  post "/new_request", to: "pi#new_request", as: "new_request"
+  # route to update db to save request as "feed"
+  put "/feed_request", to: "pi#feed_request", as: "feed_request"
+
+  # API endpoints. One to check for request, the second to recieve confirmation
   get "/run_pi", to: "pi#run_pi", as: "pi"
+  post "/pi_confirmation", to: "pi#confirmation", as: "pi_confirmation"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
