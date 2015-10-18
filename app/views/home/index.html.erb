@@ -1,38 +1,45 @@
-<div class="row">
-  <div></div>
+<% if logged_in? %>
   <div class="page-header">
     <div class="dropdown">
       <button type="button" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" aria-label="Left Align">
         <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <% unless logged_in? %>
-          <li><%= link_to "Login", login_path('twitter') %></li>
-        <% else %>
+        <% if logged_in? %>
           <li><%= link_to "Profile", user_path(session[:user_id]) %></li>
           <li><%= link_to "Log Out", logout_path %></li>
         <% end %>
       </ul>
+  </div>
+<% end %>
+
+
+
+  <div class="row">
+    <h1 id="header_text">Robo Feeder</h1>
+    <h5>Remotely feed your furry friend</h5>
+  </div>
+
+  <div class="twitter_login">
+    <% unless logged_in? %>
+      <%= link_to image_tag('sign-in-with-twitter-gray.png'), login_path('twitter')%>
+    <% end %>
+  </div>
+
+<% if logged_in? %>
+  <div class="row">
+    <div class="col-xs-12", id="feed_details">
+      <h2>Your pet has been fed x numbers today</h2>
     </div>
-    <h1 id="header_text">Robo Feeder <br><small>Remotely feed your furry friend</small></h1>
   </div>
-</div>
-
-<div class="row">
-  <div class="col-xs-12 col-md-8", id="feed_details">
-    <h2>Your pet has been fed x numbers today</h2>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-xs-12">
+      <%= button_to "Feed Cat", feed_request_path, method: :put, data: "feed", class: "btn btn-default" %>
+    </div>
   </div>
-</div>
-
-<br>
-<br>
-
-<div class="row">
-  <div class="col-xs-12 col-md-8">
-    <%= button_to "Feed Cat", feed_request_path, method: :put, data: "feed", class: "btn btn-default" %>
-  </div>
-</div>
-
+<% end %>
 
 
 
