@@ -27,6 +27,25 @@
   </div>
 
 <% if logged_in? %>
+
+<script>window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+
+    return t;
+  }(document, "script", "twitter-wjs"));
+</script>
+
   <div class="row">
     <div class="col-xs-12", id="feed_details">
       <h2>Your pet has been fed x numbers today</h2>
@@ -38,6 +57,14 @@
     <div class="col-xs-12">
       <%= button_to "Feed Cat", feed_request_path, method: :put, data: "feed", class: "btn btn-default" %>
     </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-xs-12">
+      <p>Tweet about your pet!</p>
+        <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Fed%20my%20fat%20cat"> Tweet</a>
+  </div>
   </div>
 <% end %>
 
