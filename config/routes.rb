@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   # route to update db to save request as "feed"
   put "/feed_request", to: "pi#feed_request", as: "feed_request"
-  put "/feed_timer", to: "pi#set_timer", as: "timer"
+  get "/feed_timer", to: "pi#set_timer", as: "timer"
 
   # API endpoints. One to check for request, the second to recieve confirmation
   get "/run_pi", to: "pi#run_pi", as: "pi"
