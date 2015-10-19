@@ -32,10 +32,12 @@ skip_before_action :verify_authenticity_token
   end
 
   def confirmation
-    request.raw_post
+    @request = Request.find(1)
 
+    if params["request"] == "success"
+      @request.body = "none"
+    end
     # request = Request.find(1)
-
 
     # Request.update()
     #remove body data from db if response is success
