@@ -9,6 +9,14 @@ class PiController < ApplicationController
     redirect_to root_path
   end
 
+  def reset_request
+    request = Request.find(1)
+    request.body = "none"
+    request.save
+
+    redirect_to root_path
+  end
+
   # method to update db with info on timer changes
   def set_timer
 
