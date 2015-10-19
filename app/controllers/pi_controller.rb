@@ -35,7 +35,7 @@ skip_before_action :verify_authenticity_token
     @request = Request.find(1)
 
     if params["request"] == "success"
-      flash.now[:notice] = "Your pet has been fed!"
+      flash[:notice] = "Your pet has been fed!"
       @request.body = "none"
       @request.save
     end
@@ -44,7 +44,7 @@ skip_before_action :verify_authenticity_token
     # Request.update()
     #remove body data from db if response is success
     #success message comes in as post request from Pi
-    render json: nil
+    redirect_to root_path
   end
 
 end
