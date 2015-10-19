@@ -44,7 +44,7 @@ skip_before_action :verify_authenticity_token
     # Request.update()
     #remove body data from db if response is success
     #success message comes in as post request from Pi
-    render :nothing => true
+    render json: nil
   end
 
 end
