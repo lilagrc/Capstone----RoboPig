@@ -35,3 +35,10 @@ http://raspberrypi.stackexchange.com/questions/27222/controlling-a-continuous-se
 Move with RPi GPIO
 - servo1.py on main directory moves it incrementally
 
+
+# pub sub model - might be too much work
+- tell server interested in outcome of event
+- polling server w/ pi is what i'm doing now
+
+-- JS poll to rails server checking if update --
+

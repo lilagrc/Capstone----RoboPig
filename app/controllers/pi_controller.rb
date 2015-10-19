@@ -1,5 +1,5 @@
 class PiController < ApplicationController
-skip_before_action :verify_authenticity_token
+# skip_before_action :verify_authenticity_token
 # create method to update db to feed request
   def feed_request
     request = Request.first_or_initialize(id: 1, body: "placeholder")
@@ -35,7 +35,7 @@ skip_before_action :verify_authenticity_token
     @request = Request.find(1)
 
     if params["request"] == "success"
-      flash[:notice] = "Your pet has been fed!"
+      flash.now[:notice] = "Your pet has been fed!"
       @request.body = "none"
       @request.save
     end
@@ -44,7 +44,7 @@ skip_before_action :verify_authenticity_token
     # Request.update()
     #remove body data from db if response is success
     #success message comes in as post request from Pi
-    redirect_to root_path
+    render :nothing => true
   end
 
 end
