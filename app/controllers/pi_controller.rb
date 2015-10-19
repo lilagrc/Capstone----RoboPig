@@ -32,10 +32,9 @@ class PiController < ApplicationController
   end
 
   def confirmation
-    @data = params
-    print @data
+    puts request.raw_post
 
-    request = Request.find(1)
+    # request = Request.find(1)
 
 
     # Request.update()
