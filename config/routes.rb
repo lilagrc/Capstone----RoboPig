@@ -28,7 +28,7 @@ Rails.application.routes.draw do
 
   # API endpoints. One to check for request, the second to recieve confirmation
   get "/run_pi", to: "pi#run_pi", as: "pi"
-  post "/pi_confirmation", to: "pi#confirmation", as: "pi_confirmation"
+  put "/pi_confirmation", to: "pi#confirmation", as: "pi_confirmation"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
