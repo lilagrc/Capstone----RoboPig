@@ -31,12 +31,10 @@
 
 #header_text {
   text-align: center;
-  color: black;
+  color: white;
   border-radius: 10px;
-  background: rgba(255, 255, 255, .7);
-  /*height: 50px;*/
+  background: rgba(154, 176, 176, .7);
 }
-
 
 h5 {
   color: white;
@@ -63,6 +61,10 @@ h5 {
 #dropdownMenu1 {
   background-color: transparent;
   border: 1px solid black;
+}
+
+.panel-group {
+  text-align: center;
 }
 
 /*
