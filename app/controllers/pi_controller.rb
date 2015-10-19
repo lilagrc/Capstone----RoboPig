@@ -32,7 +32,8 @@ class PiController < ApplicationController
   end
 
   def confirmation
-    puts params
+    @data = params
+    print @data
 
     request = Request.find(1)
 
