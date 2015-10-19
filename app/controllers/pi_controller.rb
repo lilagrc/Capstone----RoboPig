@@ -1,5 +1,5 @@
 class PiController < ApplicationController
-
+skip_before_action :verify_authenticity_token
 # create method to update db to feed request
   def feed_request
     request = Request.first_or_initialize(id: 1, body: "placeholder")
@@ -32,7 +32,7 @@ class PiController < ApplicationController
   end
 
   def confirmation
-    puts request.raw_post
+    request.raw_post
 
     # request = Request.find(1)
 
