@@ -26,6 +26,7 @@ class PiController < ApplicationController
   def confirmation
 
     #remove body data from db if response is success
+    #success message comes in as post request from Pi
   end
 
 end

@@ -26,13 +26,17 @@
   display: block;
   padding: 0 !important;
   margin: 0;
+  font-family: 'Play', sans-serif;
  }
 
 #header_text {
   text-align: center;
-  color: white;
+  color: black;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .7);
+  /*height: 50px;*/
+}
 
- }
 
 h5 {
   color: white;
@@ -56,6 +60,10 @@ h5 {
     text-align: center;
   }
 
+#dropdownMenu1 {
+  background-color: transparent;
+  border: 1px solid black;
+}
 
 /*
 h1 {
@@ -66,10 +74,7 @@ h1 {
     float: right;
   }*/
 /*
-#dropdownMenu1 {
-  margin-top: 2px;
-  float: left;
-}*/
+
 
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a9db80+0,96c56f+100;Green+3D+%232 */
 /*.page-header {
