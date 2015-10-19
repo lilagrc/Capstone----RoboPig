@@ -35,7 +35,7 @@ skip_before_action :verify_authenticity_token
     @request = Request.find(1)
 
     if params["request"] == "success"
-      flash[:notice] = "Your pet has been fed!"
+      flash.now[:notice] = "Your pet has been fed!"
       @request.body = "none"
       @request.save
     end
