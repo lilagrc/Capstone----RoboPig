@@ -32,11 +32,12 @@ class PiController < ApplicationController
   end
 
   def confirmation
+    puts params
+
     request = Request.find(1)
 
-    raise
 
-    Request.update()
+    # Request.update()
     #remove body data from db if response is success
     #success message comes in as post request from Pi
   end
