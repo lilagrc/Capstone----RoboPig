@@ -10,12 +10,12 @@
           <li><%= link_to "Log Out", logout_path %></li>
         <% end %>
       </ul>
+    </div>
   </div>
 <% end %>
 
-  <div class="row">
-    <h1 id="header_text">Robo Feeder</h1>
-    <h5>Remotely feed your furry friend</h5>
+  <div class="row" id="header_text">
+    <h1>Robo Feeder</h1>
   </div>
 
   <div class="twitter_login">
@@ -44,20 +44,27 @@
   }(document, "script", "twitter-wjs"));
 </script>
 
+<br>
+<br>
+
+
+
   <div class="row">
     <div class="col-xs-12", id="feed_details">
-      <h2>Your pet has been fed x numbers today</h2>
+      <h3>BearPig has been fed 2 numbers today</h3>
     </div>
   </div>
   <br>
   <br>
   <div class="row">
     <div class="col-xs-12">
-      <%= button_to "Feed Cat", feed_request_path, method: :put, data: "feed", class: "btn btn-default" %>
-      <%= button_to "Reset Request", reset_request_path, method: :put, data: "none", class: "btn btn-default" %>
+      <%= button_to "Feed Now", feed_request_path, method: :put, data: "feed", class: "btn btn-default", id: "feed_button" %>
+      <br>
+      <%= button_to "Schedule Feeding", timer_path, method: :put, class: "btn btn-default" %>
     </div>
   </div>
-
+<br>
+<br>
   <div class="row">
     <div class="col-xs-12">
       <p>Tweet about your pet!</p>

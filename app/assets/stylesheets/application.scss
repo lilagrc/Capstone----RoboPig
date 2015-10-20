@@ -27,13 +27,21 @@
   padding: 0 !important;
   margin: 0;
   font-family: 'Play', sans-serif;
+  color: white;
+ }
+
+ h1 {
+  margin-bottom: 2px;
+  margin-top: 2px;
+  font-size: 60px;
+  font-style: bold;
  }
 
 #header_text {
   text-align: center;
   color: white;
   border-radius: 10px;
-  background: rgba(154, 176, 176, .7);
+  /*background: rgba(183, 193, 193, .9);*/
 }
 
 h5 {
@@ -41,17 +49,31 @@ h5 {
   text-align: center;
 }
 
+h2  {
+  color: white;
+}
+
+
+
  .col-xs-12 {
     text-align: center;
-
+    /*background-color: rgba(183, 193, 193, .4);*/
   }
 
   #feed_details {
     text-align: center;
+    border-radius: 10px;
+    background-color: rgba(183, 193, 193, .9);
+  }
+
+  #feed_button {
+    padding-left: 2.5em;
+    padding-right: 2.5em;
   }
 
   .page-header {
     margin-top: 2px;
+    margin-bottom: 1px;
   }
 
   .twitter_login {
@@ -60,7 +82,7 @@ h5 {
 
 #dropdownMenu1 {
   background-color: transparent;
-  border: 1px solid black;
+  border: 1px solid white;
 }
 
 .panel-group {
