@@ -1,4 +1,5 @@
 class Api::V1::RequestsController < ApplicationController
+
   before_action :authenticate
 
   # method to send pi information from request db

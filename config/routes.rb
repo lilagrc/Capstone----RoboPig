@@ -25,8 +25,9 @@ Rails.application.routes.draw do
   put "/reset_request", to: "pi#reset_request", as: "reset_request"
 
   # API endpoints. One to check for request, the second to recieve confirmation
-  get "/api/v1/requests/new", to: "requests#run_pi", as: "pi"
-  put "/api/v1/requests/confirmation", to: "requests#confirmation", as: "pi_confirmation"
+
+  get "/api/v1/requests/new", to: "api/v1/requests#run_pi", as: "pi"
+  put "/api/v1/requests/confirmation", to: "api/v1/requests#confirmation", as: "pi_confirmation"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
