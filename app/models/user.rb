@@ -22,9 +22,10 @@ class User < ActiveRecord::Base
       token: auth_hash.credentials.token,
       secret: auth_hash.credentials.secret
       )
-      user.api_key = generate_api_key
+      user.api_key = user.generate_api_key
       user.save
     end
+
     return user
   end
 
