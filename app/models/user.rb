@@ -1,25 +1,32 @@
 class User < ActiveRecord::Base
-  #Validations
+  # Validations
   validates :name, presence: true
 
-  #Associations
+  # Associations
   has_many :pets
-  has_many :tweets
+
+  # Callbacks
+  before_create do |doc|
+    doc.api_key = doc.generate_api_key
+  end
 
   def self.find_or_create_user(auth_hash)
     uid = auth_hash.uid
 
-    user = User.where(provider: auth_hash.provider, uid: uid).first_or_initialize
-
-    user.update(
+    if User.find_by(uid: uid)
+      user = User.find_by(uid: uid)
+    else user = User.create(
       nickname: auth_hash.info.nickname,
       name: auth_hash.info.name,
       profile_image: auth_hash.info.image,
       token: auth_hash.credentials.token,
       secret: auth_hash.credentials.secret
-      )
+    )
 
-    return user.save ? user : nil
+    return user
+  end
+
+
   end
 
   def twitter
@@ -29,5 +36,9 @@ class User < ActiveRecord::Base
       config.access_token        = token
       config.access_token_secret = secret
     end
+  end
+
+  def generate_api_key
+      token = SecureRandom.base64.tr('+/=', 'Qrt')
   end
 end
