@@ -6,9 +6,9 @@ class User < ActiveRecord::Base
   has_many :pets
 
   # Callbacks
-  before_create do |doc|
-    doc.api_key = doc.generate_api_key
-  end
+  # before_create do |user|
+  #   user.api_key = user.generate_api_key
+  # end
 
   def self.find_or_create_user(auth_hash)
     uid = auth_hash.uid
@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
       profile_image: auth_hash.info.image,
       token: auth_hash.credentials.token,
       secret: auth_hash.credentials.secret
+      api_key: user.generate_api_key
     )
 
     return user
