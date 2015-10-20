@@ -3,13 +3,16 @@ import json
 
 
 def send_confirmation():
-  url = 'http://www.robofeedpet.com/pi_confirmation'
+  url = 'http://www.robofeedpet.com/api/v1/requests/confirmation'
   payload = {'request': 'success'}
   r = requests.put(url, json=payload)
   return
 
 # r = requests.put('http://www.robofeedpet.com/run_pi', data = {"feed":"yes"})
-r = requests.get('http://www.robofeedpet.com/run_pi', headers={'Authorization': 'Token token='})
+url = 'http://www.robofeedpet.com/api/v1/requests/new'
+headers = {'Authorization': 'Token token='}
+
+r = requests.get(url, headers=headers)
 
 r = r.json()
 print r
