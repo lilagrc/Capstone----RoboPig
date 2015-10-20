@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151016211653) do
+ActiveRecord::Schema.define(version: 20151020030325) do
 
   create_table "feedings", force: :cascade do |t|
     t.datetime "date"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20151016211653) do
     t.string   "token"
     t.string   "secret"
     t.string   "profile_image"
+    t.string   "api_key"
   end
 
 end
