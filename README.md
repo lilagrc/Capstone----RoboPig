@@ -42,3 +42,9 @@ Move with RPi GPIO
 
 -- JS poll to rails server checking if update --
 
+- Create Python scripts to call browser API
+  - Get request to find out instructions
+  - Post to send confirmation
+- Create cron job to run automatically
+  -
+

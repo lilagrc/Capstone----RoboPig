@@ -5,11 +5,6 @@ class User < ActiveRecord::Base
   # Associations
   has_many :pets
 
-  # Callbacks
-  # before_create do |user|
-  #   user.api_key = user.generate_api_key
-  # end
-
   def self.find_or_create_user(auth_hash)
     uid = auth_hash.uid
 
