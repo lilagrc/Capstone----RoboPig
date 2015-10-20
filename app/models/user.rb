@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
     if User.find_by(uid: uid)
       user = User.find_by(uid: uid)
     else user = User.create(
+      uid: uid,
       nickname: auth_hash.info.nickname,
       name: auth_hash.info.name,
       profile_image: auth_hash.info.image,
