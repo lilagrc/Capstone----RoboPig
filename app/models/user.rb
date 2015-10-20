@@ -21,13 +21,11 @@ class User < ActiveRecord::Base
       profile_image: auth_hash.info.image,
       token: auth_hash.credentials.token,
       secret: auth_hash.credentials.secret
-      api_key: user.generate_api_key
-    )
-
+      )
+      user.api_key = generate_api_key
+      user.save
+    end
     return user
-  end
-
-
   end
 
   def twitter
