@@ -4,10 +4,10 @@
   <div class="col-md-6">
     <%= form_for @request, url: timer_path do |f| %>
       <div class="form-group">
-        <h4>Enter Feed Times in military time (1-24, 13 = 1pm). If you wish to enter multiple feed times, please seperate with a comma (ex 7, 17).</h4>
+        <h4>Enter Feed Time in Military Time (0-23, 13 = 1pm)</h4>
         <fieldset>
           <%= f.label "Feed Times" %>
-          <%= f.text_field :schedule, placeholder: "ex. 11 or 17", class:"form-control" %>
+          <%= f.text_field :schedule, placeholder: "ex. 11", class:"form-control" %>
 
           <%= f.submit "Schedule Feeding" %>
         </fieldset>

@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   put "/feed_request", to: "pi#feed_request", as: "feed_request"
   get "/new_schedule", to: "pi#new_schedule", as: "schedule"
   patch "/set_timer", to: "pi#set_timer", as: "timer"
+  put "/cancel_feeding", to: "pi#cancel_feeding", as: "cancel"
   # put "/reset_request", to: "pi#reset_request", as: "reset_request"
 
   # API endpoints. One to check for request, the second to recieve confirmation

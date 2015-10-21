@@ -22,17 +22,26 @@ class PiController < ApplicationController
 
   def new_schedule
     @request = Request.first_or_initialize(id: 1, body: "placeholder")
-    @request.body = nil
+    @request.schedule = nil
   end
 
   def set_timer
     request = Request.find(1)
     request.schedule = params["request"]["schedule"]
     request.save
+    flash[:notice] = "Your feeding has been scheduled. You can schedule another feeding time by clicking 'Schedule a Feeding'"
 
     redirect_to root_path
   end
 
+  def cancel_feeding
+    request = Request.find(1)
+    request.body = nil
+    request.schedule = "cancel"
+    request.save
+    flash[:notice] = "Your feedings have been cancelled"
 
+    redirect_to root_path
+  end
 
 end
