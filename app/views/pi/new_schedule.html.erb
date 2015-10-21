@@ -1,10 +1,17 @@
-<%= form_for @request, url: timer_path do |f| %>
-  <div class="form-group">
-    <fieldset>
-      <%= f.label "Enter Feed Time (13 = 1pm)" %>
-      <%= f.text_field :body, placeholder: "ex. 11 or 17", class:"form-control" %>
+<br>
+<br>
+<div class="row">
+  <div class="col-md-6">
+    <%= form_for @request, url: timer_path do |f| %>
+      <div class="form-group">
+        <h4>Enter Feed Times in military time (1-24, 13 = 1pm). If you wish to enter multiple feed times, please seperate with a comma (ex 7, 17).</h4>
+        <fieldset>
+          <%= f.label "Feed Times" %>
+          <%= f.text_field :body, placeholder: "ex. 11 or 17", class:"form-control" %>
 
-      <%= f.submit "Schedule Feeding" %>
-    </fieldset>
+          <%= f.submit "Schedule Feeding" %>
+        </fieldset>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>

@@ -21,7 +21,7 @@ class PiController < ApplicationController
 
   def new_schedule
     @request = Request.first_or_initialize(id: 1, body: "placeholder")
-
+    @request.body = nil
   end
 
   def set_timer
