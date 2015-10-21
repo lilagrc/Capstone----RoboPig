@@ -2,7 +2,7 @@ class PiController < ApplicationController
 # skip_before_action :verify_authenticity_token
 # create method to update db to feed request
   def feed_request
-    request = Request.first_or_initialize(id: 1, body: "placeholder")
+    request = Request.first_or_initialize(id: 1, body: nil, schedule: nil)
     request.schedule = nil
     request.body = "feed"
     request.save
