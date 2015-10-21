@@ -4,9 +4,10 @@ class Api::V1::RequestsController < Api::ApiController
 
   # method to send pi information from request db
   def run_pi
-    request = Request.first.body
+    feed_request = Request.first.body
+    schedule_request = Request.first.schedule
 
-    res = { request: request}
+    res = { feed_request: feed_request, schedule_request: schedule_request }
     render json: res
   end
 

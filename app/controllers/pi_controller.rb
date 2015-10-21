@@ -3,6 +3,7 @@ class PiController < ApplicationController
 # create method to update db to feed request
   def feed_request
     request = Request.first_or_initialize(id: 1, body: "placeholder")
+    request.schedule = nil
     request.body = "feed"
     request.save
 
@@ -26,7 +27,7 @@ class PiController < ApplicationController
 
   def set_timer
     request = Request.find(1)
-    request.body = params["request"]["body"]
+    request.schedule = params["request"]["schedule"]
     request.save
 
     redirect_to root_path
