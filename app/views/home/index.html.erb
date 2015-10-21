@@ -45,9 +45,6 @@
 </script>
 
 <br>
-<br>
-
-
 
   <div class="row">
     <div class="col-xs-12", id="feed_details">
@@ -60,7 +57,7 @@
     <div class="col-xs-12">
       <%= button_to "Feed Now", feed_request_path, method: :put, data: "feed", class: "btn btn-default", id: "feed_button" %>
       <br>
-      <%= button_to "Schedule Feeding", timer_path, method: :put, class: "btn btn-default" %>
+      <%= button_to "Schedule Feeding", schedule_path, method: :get, class: "btn btn-default" %>
     </div>
   </div>
 <br>

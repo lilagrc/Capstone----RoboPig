@@ -18,9 +18,18 @@ class PiController < ApplicationController
   # end
 
   # method to update db with info on timer changes
+
+  def new_schedule
+    @request = Request.first_or_initialize(id: 1, body: "placeholder")
+
+  end
+
   def set_timer
+    request = Request.find(1)
+    request.body = params["request"]["body"]
+    request.save
 
-
+    redirect_to root_path
   end
 
 

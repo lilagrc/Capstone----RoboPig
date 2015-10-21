@@ -1,0 +1,10 @@
+<%= form_for @request, url: timer_path do |f| %>
+  <div class="form-group">
+    <fieldset>
+      <%= f.label "Enter Feed Time (13 = 1pm)" %>
+      <%= f.text_field :body, placeholder: "ex. 11 or 17", class:"form-control" %>
+
+      <%= f.submit "Schedule Feeding" %>
+    </fieldset>
+  </div>
+<% end %>
