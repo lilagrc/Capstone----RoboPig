@@ -7,6 +7,8 @@ class PiController < ApplicationController
     request.body = "feed"
     request.save
 
+    add_feeding
+
     redirect_to root_path
   end
 
@@ -42,6 +44,20 @@ class PiController < ApplicationController
     flash[:notice] = "Your feedings have been cancelled"
 
     redirect_to root_path
+  end
+
+  private
+
+  def add_feeding
+    id = session[:user_id]
+    user = User.find_by(id: id)
+    #only handles one pet per user for now
+    pet_id = user.pets.first.id
+    new_feeding = Feeding.new
+    new_feeding.pet_id = pet_id
+    # new_feeding.date = Time.now.strftime(%I:%M,%m/%d/%y)
+    new_feeding.amount = 1
+    new_feeding.save
   end
 
 end

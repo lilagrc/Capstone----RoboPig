@@ -4,7 +4,7 @@
   <div class="col-md-6">
     <%= form_for @request, url: timer_path do |f| %>
       <div class="form-group">
-        <h4>Enter Feed Time in Military Time (0-23, 13 = 1pm)</h4>
+        <h4>Add a schedule feeding time below. Enter Feed Time in Military Time (0-23, 13 = 1pm). This will feed your pet at this time each day.</h4>
         <fieldset>
           <%= f.label "Feed Times" %>
           <%= f.text_field :schedule, placeholder: "ex. 11", class:"form-control" %>
