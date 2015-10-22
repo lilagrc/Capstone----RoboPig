@@ -68,7 +68,7 @@
 <% else %>
   <div class="row">
     <div class="col-xs-12", id="feed_details">
-        <h3>Register your robo feeder!</h3>
+        <h3><%= link_to "Register your robo feeder!",  new_user_pet_path(session[:user_id]) %></h3>
     </div>
 <% end %>
 
