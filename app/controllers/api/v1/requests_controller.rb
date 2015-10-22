@@ -15,7 +15,6 @@ class Api::V1::RequestsController < Api::ApiController
     @request = Request.find(1)
 
     if params["request"] == "success"
-      flash.now[:notice] = "Your pet has been fed!"
       @request.body = nil
       @request.schedule = nil
       @request.save
