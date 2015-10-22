@@ -46,9 +46,10 @@
 
 <br>
 
+<% if @user.pets != [] %>
   <div class="row">
     <div class="col-xs-12", id="feed_details">
-      <h3>BearPig has been fed <%= @num_feedings %> times today</h3>
+      <h3><%= @user.pets.first.name %> has been fed <%= @num_feedings %> times today</h3>
     </div>
   </div>
   <br>
@@ -62,6 +63,16 @@
       <%= button_to "Cancel Feedings", cancel_path, method: :put, data: { confirm: "This will delete all schedule feedings. Proceed?"}, class: "btn btn-default", id: "cancel_button" %>
     </div>
   </div>
+
+
+<% else %>
+  <div class="row">
+    <div class="col-xs-12", id="feed_details">
+        <h3>Register your robo feeder!</h3>
+    </div>
+<% end %>
+
+
 <br>
 <br>
   <div class="row">
