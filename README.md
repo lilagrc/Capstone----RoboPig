@@ -49,4 +49,5 @@ Move with RPi GPIO
   -http://unix.stackexchange.com/questions/11102/cron-running-job-every-15-seconds
   - http://www.devils-heaven.com/raspberry-pi-cron-jobs/
   - http://trevorappleton.blogspot.com/2014/06/scheduling-python-programs-using-cron.html
+  - https://pypi.python.org/pypi/python-crontab
 
