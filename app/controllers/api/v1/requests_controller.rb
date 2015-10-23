@@ -5,7 +5,9 @@ class Api::V1::RequestsController < Api::ApiController
   # method to send pi information from request db
   def run_pi
     id = session[:user_id]
+    puts id
     user_request = Request.find_by(user_id: id)
+    puts user_request
     feed_request = user_request.body
     schedule_request = user_request.schedule
 
