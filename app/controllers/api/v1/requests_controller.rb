@@ -4,15 +4,16 @@ class Api::V1::RequestsController < Api::ApiController
 
   # method to send pi information from request db
   def run_pi
-    feed_request = Request.first.body
-    schedule_request = Request.first.schedule
+    user_request = Request.find_by(user_id: session[:user_id])
+    feed_request = user_request.body
+    schedule_request = user_request.schedule
 
     res = { feed_request: feed_request, schedule_request: schedule_request }
     render json: res
   end
 
   def confirmation
-    @request = Request.find(1)
+    @request = Request.find_by(user_id: session[:user_id])
 
     if params["request"] == "success"
       @request.body = nil
