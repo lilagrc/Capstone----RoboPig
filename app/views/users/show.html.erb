@@ -1,27 +1,22 @@
+ <div class="page-header">
+    <%= link_to root_path, class: "btn btn-default" do %><i class="glyphicon glyphicon-home"></i>
+    <% end %>
+</div>
 
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
-<h5>Logged in as: <%= @user.name %></h5>
-<% if @user.pets != [] %>
-  <h5>You have <%= @user.pets.size %> registered pet, <%= @user.pets.first.name %>. </h5>
-  <h5>Your user token is <%= @user.api_key %></h5>
-<% else %>
-  <h5>You have no registered pets.</h5>
-<% end %>
-
-
-<%= link_to root_path, class: "btn btn-default" do %><i class="glyphicon glyphicon-home"></i>
-<% end %>
+<div class="row">
+  <div class="col-md-12", id="profile_details">
+    <h2>Logged in as: <%= @user.name %></h2>
+    <% if @user.pets != [] %>
+      <h2>You have <%= @user.pets.size %> registered pet: <%= @user.pets.first.name %>. </h2>
+      <h2>Your user token: <%= @user.api_key %></h2>
+    <% else %>
+      <h2>You have no registered pets.</h2>
+    <% end %>
+  </div>
+</div>
 
 
 
