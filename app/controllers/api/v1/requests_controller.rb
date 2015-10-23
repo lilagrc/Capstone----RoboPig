@@ -6,6 +6,8 @@ class Api::V1::RequestsController < Api::ApiController
   def run_pi
     key = request.headers["Authorization"]
     key.slice!("Token token=")
+    key.slice!("\"")
+    key.slice!("\"")
     user = User.find_by(api_key: key)
     user_request = Request.find_by(user_id: user.id)
     feed_request = user_request.body
