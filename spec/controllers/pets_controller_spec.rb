@@ -1,8 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe PetsController, type: :controller do
+  let (:log_in) {
+    logged_user = create :user
+    session[:user_id] = logged_user.id
+  }
+
   describe "#new" do
     it "renders the 'new' template" do
+      log_in
       get :new, :user_id => 1
 
       expect(response).to render_template("new")

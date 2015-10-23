@@ -1,14 +1,15 @@
-## ROBO PIG -- Feed and monitor your lazy house cat
+## ROBO PIG -- Remotely feed your pets
 
 ## DIY Feeder
 - Supplies
-  - Raspberry Pi
+  - Raspberry Pi B+
   - Continuous Rotation Servo (https://www.adafruit.com/products/154)
   - Micro USB Breakout Board (https://www.adafruit.com/products/1833)
   - USB cable (https://www.adafruit.com/products/592)
   - 5v USB Power supply (https://www.adafruit.com/products/501)
-  - Cobbler and Breakout board for prototyping (https://www.adafruit.com/products/914)
-  - Snack dispensor
+  - Cobbler and Breakout board for prototyping (http://www.amazon.com/gp/product/B00OG531XI?psc=1&redirect=true&ref_=oh_aui_detailpage_o01_s00)
+  - Snack dispensor (http://www.amazon.com/gp/product/B0053TC9YS?psc=1&redirect=true&ref_=oh_aui_detailpage_o02_s00)
+  - Male to male wires
 
 - Hardware Prep
   - Solder micro USB breakout board
