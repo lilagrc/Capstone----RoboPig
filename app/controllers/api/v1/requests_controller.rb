@@ -14,7 +14,7 @@ class Api::V1::RequestsController < Api::ApiController
   end
 
   def confirmation
-    @request = Request.find_by(user_id: session[:user_id])
+    @request = Request.find_by(user_id: 1)
 
     if params["request"] == "success"
       @request.body = nil
