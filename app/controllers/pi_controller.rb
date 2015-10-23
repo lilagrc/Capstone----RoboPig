@@ -1,6 +1,6 @@
 class PiController < ApplicationController
-# skip_before_action :verify_authenticity_token
-# create method to update db to feed request
+  before_action :require_login
+
   def feed_request
     request = Request.first_or_initialize(id: 1, body: nil, schedule: nil, user_id: session[:user_id])
     request.schedule = nil

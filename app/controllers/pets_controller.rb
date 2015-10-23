@@ -1,8 +1,9 @@
 class PetsController < ApplicationController
+  before_action :require_login
+
   def new
     @pet = Pet.new
   end
-
 
   def create
     @pet = Pet.create(create_params[:pet])
