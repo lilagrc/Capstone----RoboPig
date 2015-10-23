@@ -2,7 +2,7 @@ class PiController < ApplicationController
   before_action :require_login
 
   def feed_request
-    request = Request.first_or_initialize(id: 1, body: nil, schedule: nil, user_id: session[:user_id])
+    request = Request.where(user_id: session[:user_id]).first_or_initialize
     request.schedule = nil
     request.body = "feed"
     request.save
@@ -23,12 +23,14 @@ class PiController < ApplicationController
   # method to update db with info on timer changes
 
   def new_schedule
-    @request = Request.first_or_initialize(id: 1, body: "placeholder", user_id: session[:user_id])
+    @request = Request.where(user_id: session[:user_id]).first_or_initialize
     @request.schedule = nil
+    @request.body = nil
+    @request.save
   end
 
   def set_timer
-    request = Request.find(1)
+    request = Request.find_by(user_id: session[:user_id])
     request.schedule = params["request"]["schedule"]
     request.save
     flash[:notice] = "Your feeding has been scheduled. You can schedule another feeding time by clicking 'Schedule a Feeding'"
