@@ -46,9 +46,10 @@
 
 <br>
 
+<% if @user.pets != [] %>
   <div class="row">
     <div class="col-xs-12", id="feed_details">
-      <h3>BearPig has been fed <%= @num_feedings %> times today</h3>
+      <h3><%= @user.pets.first.name %> has been fed <%= @num_feedings %> times today</h3>
     </div>
   </div>
   <br>
@@ -62,7 +63,16 @@
       <%= button_to "Cancel Feedings", cancel_path, method: :put, data: { confirm: "This will delete all schedule feedings. Proceed?"}, class: "btn btn-default", id: "cancel_button" %>
     </div>
   </div>
-<br>
+
+
+<% else %>
+  <div class="row">
+    <div class="col-xs-12", id="feed_details">
+      <h2>Welcome to Robo Feeder! If you would like to instructions on building your own pet feeding robot, click here: </h2>
+        <h3><%= link_to "Register your robo feeder!",  new_user_pet_path(session[:user_id]) %></h3>
+    </div>
+<% end %>
+
 <br>
   <div class="row">
     <div class="col-xs-12">

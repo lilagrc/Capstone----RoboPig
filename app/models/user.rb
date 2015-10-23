@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 
   # Associations
   has_many :pets
+  has_many :requests
 
   def self.find_or_create_user(auth_hash)
     uid = auth_hash.uid

@@ -49,4 +49,12 @@ Move with RPi GPIO
   -http://unix.stackexchange.com/questions/11102/cron-running-job-every-15-seconds
   - http://www.devils-heaven.com/raspberry-pi-cron-jobs/
   - http://trevorappleton.blogspot.com/2014/06/scheduling-python-programs-using-cron.html
+  - https://pypi.python.org/pypi/python-crontab
+
+- Checkin questions
+  - Python for code climate
+  - Testing for python/hardware
+  - Expanding to multiple users so it can be used by anyone who builds feeder
+    - does the authenticate method ensure the logged in user's key is being used in the api call?
+  - What seems like good priority -- extending, more hardware, jquery and style
 

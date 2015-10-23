@@ -2,7 +2,7 @@ class PiController < ApplicationController
 # skip_before_action :verify_authenticity_token
 # create method to update db to feed request
   def feed_request
-    request = Request.first_or_initialize(id: 1, body: nil, schedule: nil)
+    request = Request.first_or_initialize(id: 1, body: nil, schedule: nil, user_id: session[:user_id])
     request.schedule = nil
     request.body = "feed"
     request.save
@@ -23,7 +23,7 @@ class PiController < ApplicationController
   # method to update db with info on timer changes
 
   def new_schedule
-    @request = Request.first_or_initialize(id: 1, body: "placeholder")
+    @request = Request.first_or_initialize(id: 1, body: "placeholder", user_id: session[:user_id])
     @request.schedule = nil
   end
 
