@@ -20,6 +20,8 @@ class Api::V1::RequestsController < Api::ApiController
   def confirmation
     key = request.headers["Authorization"]
     key.slice!("Token token=")
+    key.slice!("\"")
+    key.slice!("\"")
     user = User.find_by(api_key: key)
     @request = Request.find_by(user_id: user.id)
 
