@@ -7,10 +7,10 @@
 <br>
 
 <div class="row">
-  <div class="col-md-12", id="profile_details">
+  <div class="col-md-12" id="profile_details">
     <h2>Logged in as: <%= @user.name %></h2>
     <% if @user.pets != [] %>
-      <h2>You have <%= @user.pets.size %> registered pet: <%= @user.pets.first.name %>. </h2>
+      <h2>You have <%= @user.pets.size %> registered pet: <%= @user.pets.first.name %> </h2>
       <h2>Your user token: <%= @user.api_key %></h2>
     <% else %>
       <h2>You have no registered pets.</h2>
@@ -18,7 +18,12 @@
   </div>
 </div>
 
+<br>
+<div class="row">
+  <div class="col-md-12" id="profile_details">
+    <h2>Feeding Stats</h2>
 
-
+  </div>
+</div>
 
 
