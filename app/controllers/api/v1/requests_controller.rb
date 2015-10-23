@@ -5,6 +5,7 @@ class Api::V1::RequestsController < Api::ApiController
   # method to send pi information from request db
   def run_pi
     key = request.headers["Authorization"]
+    key = key.slice!("Token token=")
     user = User.find_by(api_key: key)
     user_request = Request.find_by(user_id: user.id)
     feed_request = user_request.body
@@ -16,6 +17,7 @@ class Api::V1::RequestsController < Api::ApiController
 
   def confirmation
     key = request.headers["Authorization"]
+    key = key.slice!("Token token=")
     user = User.find_by(api_key: key)
     @request = Request.find_by(user_id: user.id)
 
