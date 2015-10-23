@@ -56,5 +56,9 @@ Move with RPi GPIO
   - Testing for python/hardware
   - Expanding to multiple users so it can be used by anyone who builds feeder
     - does the authenticate method ensure the logged in user's key is being used in the api call?
+    - Why can't I use sessions in API call
   - What seems like good priority -- extending, more hardware, jquery and style
+  - Or should work on stats?
+  - Monitor if confirmation is sent from Pi
+  - Heroku okay?
 

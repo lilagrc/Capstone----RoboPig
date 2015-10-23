@@ -5,6 +5,7 @@ class Api::V1::RequestsController < Api::ApiController
   # method to send pi information from request db
   def run_pi
     # id = session[:user_id]
+    # HOW TO USE session id? So that the request info that is returned matches the user??
     user_request = Request.find_by(user_id: 1)
     feed_request = user_request.body
     schedule_request = user_request.schedule
