@@ -29,8 +29,23 @@ class Api::V1::RequestsController < Api::ApiController
       @request.body = nil
       @request.schedule = nil
       @request.save
+
+      add_feeding(user)
     end
 
     render :nothing => true
   end
+
+  private
+
+  def add_feeding(user)
+    #only handles one pet per user for now
+    pet_id = user.pets.first.id
+    new_feeding = Feeding.new
+    new_feeding.pet_id = pet_id
+    # new_feeding.date = Time.now.strftime(%I:%M,%m/%d/%y)
+    new_feeding.amount = 1
+    new_feeding.save
+  end
+
 end
