@@ -12,7 +12,8 @@ class UsersController < ApplicationController
 
   def update
     user = User.find(session[:user_id])
-    token = params[:pet_id]
+    token = params[:user][:pet_id]
+    token.strip!
 
     pet = Pet.find_by(api_key: token)
 
@@ -22,7 +23,7 @@ class UsersController < ApplicationController
       redirect_to user_path
     else
       flash[:notice] = "This pet could not be found"
-      redirect_to user_path
+      redirect_to root_path
     end
   end
 
