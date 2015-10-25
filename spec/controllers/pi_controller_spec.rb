@@ -33,7 +33,6 @@ RSpec.describe PiController, type: :controller do
   end
 
   describe "set_timer" do
-
     it "finds the request associated with the logged in user" do
       log_in
 
@@ -44,6 +43,18 @@ RSpec.describe PiController, type: :controller do
       request = Request.first
 
       expect(request.schedule).to eq "12"
+    end
+  end
+
+  describe "cancel_feeding" do
+    it "resets request.schedule to 'cancel" do
+      log_in
+      request = Request.create(id: 1, user_id: 1)
+
+      put :cancel_feeding
+      request = Request.first
+
+      expect(request.schedule).to eq "cancel"
     end
   end
 end
