@@ -39,12 +39,11 @@ class PiController < ApplicationController
   end
 
   def cancel_feeding
-    request = Request.find(1)
+    request = Request.find_by(user_id: session[:user_id])
     request.body = nil
     request.schedule = "cancel"
     request.save
     flash[:notice] = "Your feedings have been cancelled"
-
     redirect_to root_path
   end
 

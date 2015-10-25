@@ -32,15 +32,18 @@ RSpec.describe PiController, type: :controller do
     end
   end
 
-  describe "set_time" do
+  describe "set_timer" do
 
     it "finds the request associated with the logged in user" do
       log_in
 
       request = Request.create(id: 1, user_id: 1)
-      patch :set_time
+      params = { request: { schedule: "12" } }
+      patch :set_timer, params
 
-      expect(assigns(:request.user_id)).to eq 1
+      request = Request.first
+
+      expect(request.schedule).to eq "12"
     end
   end
 end
