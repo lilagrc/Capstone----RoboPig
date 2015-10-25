@@ -3,6 +3,9 @@ class HomeController < ApplicationController
   def index
     if session[:user_id]
       @user = User.find(session[:user_id])
+      if @user.pet_id != nil
+        @pet = Pet.find(@user.pet_id)
+      end
     end
 
     find_num_feedings

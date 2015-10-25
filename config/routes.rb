@@ -12,9 +12,9 @@ Rails.application.routes.draw do
   # get "user/:id/profile/new_pet", to: "pets#new", as: "new_pet"
   # post "user/:id/profile/create", to: "pets#create", as: "create_pet"
 
-  resources :users, only: [:show] do
-    resources :pets, only: [:new, :create]
-  end
+  resources :users, only: [:show, :edit, :update]
+
+  resources :pets, only: [:new, :create]
 
 
   get "logout", to: "sessions#destroy", as: "logout"

@@ -9,9 +9,9 @@
 <div class="row">
   <div class="col-md-12" id="profile_details">
     <h2>Logged in as: <%= @user.name %></h2>
-    <% if @user.pets != [] %>
-      <h2>You have <%= @user.pets.size %> registered pet: <%= @user.pets.first.name %> </h2>
-      <h2>Your user token: <%= @user.api_key %></h2>
+    <% if @user.pet_id != nil %>
+      <h2>Your registered pet: <%= @pet.name %> </h2>
+      <h2>Your pet token: <%= @pet.api_key %></h2>
     <% else %>
       <h2>You have no registered pets.</h2>
     <% end %>

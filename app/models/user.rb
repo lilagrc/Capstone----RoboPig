@@ -3,8 +3,7 @@ class User < ActiveRecord::Base
   validates :name, presence: true
 
   # Associations
-  has_many :pets
-  has_many :requests
+  belongs_to :pets
 
   def self.find_or_create_user(auth_hash)
     uid = auth_hash.uid
@@ -19,7 +18,7 @@ class User < ActiveRecord::Base
       token: auth_hash.credentials.token,
       secret: auth_hash.credentials.secret
       )
-      user.api_key = user.generate_api_key
+
       user.save
     end
 
@@ -35,7 +34,4 @@ class User < ActiveRecord::Base
     end
   end
 
-  def generate_api_key
-      token = SecureRandom.base64.tr('+/=', 'Qrt')
-  end
 end
