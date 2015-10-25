@@ -1,6 +1,6 @@
 <h1>Add your pet information below:</h1>
 
-<%= form_for @pet, url: user_pets_path(session[:user_id]) do |f| %>
+<%= form_for @pet, url: pets_path do |f| %>
   <div class="form-group">
     <fieldset>
       <%= f.label :name %>

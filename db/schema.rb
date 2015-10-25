@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151022222508) do
+ActiveRecord::Schema.define(version: 20151025190008) do
 
   create_table "feedings", force: :cascade do |t|
     t.datetime "date"
@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 20151022222508) do
     t.string   "name"
     t.string   "breed"
     t.integer  "weight"
-    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "api_key"
   end
 
   create_table "requests", force: :cascade do |t|
@@ -36,18 +36,13 @@ ActiveRecord::Schema.define(version: 20151022222508) do
     t.datetime "updated_at",                        null: false
     t.string   "schedule"
     t.integer  "user_id"
-  end
-
-  create_table "tweets", force: :cascade do |t|
-    t.integer  "user_id"
-    t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "pet_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "nickname"
+    t.integer  "pet_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.string   "uid"
@@ -55,7 +50,6 @@ ActiveRecord::Schema.define(version: 20151022222508) do
     t.string   "token"
     t.string   "secret"
     t.string   "profile_image"
-    t.string   "api_key"
   end
 
 end

@@ -2,7 +2,9 @@ class PiController < ApplicationController
   before_action :require_login
 
   def feed_request
-    request = Request.where(user_id: session[:user_id]).first_or_initialize
+    user = User.find(session[:user_id])
+    pet = Pet.find(user.pet_id)
+    request = Request.where(pet_id: pet.id).first_or_initialize
     request.schedule = nil
     request.body = "feed"
     request.save
@@ -21,14 +23,18 @@ class PiController < ApplicationController
   # method to update db with info on timer changes
 
   def new_schedule
-    @request = Request.where(user_id: session[:user_id]).first_or_initialize
+    user = User.find(session[:user_id])
+    pet = Pet.find(user.pet_id)
+    @request = Request.where(pet_id: pet.id).first_or_initialize
     @request.schedule = nil
     @request.body = nil
     @request.save
   end
 
   def set_timer
-    request = Request.find_by(user_id: session[:user_id])
+    user = User.find(session[:user_id])
+    pet = Pet.find(user.pet_id)
+    request = Request.find_by(pet_id: pet.id)
     request.schedule = params["request"]["schedule"]
     request.save
     flash[:notice] = "Your feeding has been scheduled. You can schedule another feeding time by clicking 'Schedule a Feeding'"
@@ -37,7 +43,9 @@ class PiController < ApplicationController
   end
 
   def cancel_feeding
-    request = Request.find_by(user_id: session[:user_id])
+    user = User.find(session[:user_id])
+    pet = Pet.find(user.pet_id)
+    request = Request.find_by(pet_id: pet.id)
     request.body = nil
     request.schedule = "cancel"
     request.save

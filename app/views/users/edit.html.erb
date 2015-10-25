@@ -1,0 +1,13 @@
+<div class="page-header">
+    <%= link_to root_path, class: "btn btn-default" do %><i class="glyphicon glyphicon-home"></i>
+    <% end %>
+</div>
+
+<h2>Please search for your pet below.</h2>
+
+<%= form_for @user do |f| %>
+  <%= f.label "Add pet token here" %>
+  <%= f.text_field :pet_id %>
+
+  <%= f.submit "Search for Pet" %>
+<% end %>

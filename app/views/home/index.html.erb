@@ -46,10 +46,10 @@
 
 <br>
 
-<% if @user.pets != [] %>
+<% if @user.pet_id != nil %>
   <div class="row">
     <div class="col-xs-12", id="feed_details">
-      <h3><%= @user.pets.first.name %> has been fed <%= @num_feedings %> times today</h3>
+      <h3><%= @pet.name %> has been fed <%= @num_feedings %> times today</h3>
     </div>
   </div>
   <br>
@@ -69,7 +69,9 @@
   <div class="row">
     <div class="col-xs-12", id="feed_details">
       <h2>Welcome to Robo Feeder! If you would like to instructions on building your own pet feeding robot, click here: </h2>
-        <h3><%= link_to "Register your robo feeder!",  new_user_pet_path(session[:user_id]) %></h3>
+        <h3><%= link_to "Register your robo feeder!",  new_pet_path(session[:user_id]) %></h3>
+        <h3>If someone in your household has already registered your feeder, you can link to their account below. You will need the correct pet token.</h3>
+        <h3><%= link_to "Find Feeder", edit_user_path(session[:user_id]) %></h3>
     </div>
 <% end %>
 
