@@ -68,4 +68,4 @@ Move with RPi GPIO
   - build out doc for Pi --> really focus on it
   -- every time motor turns, send post request
   - - extract token
-
+-- Tech challenge -- the moment i realized the token needed to belong to the pet/feeder, and the code explosion that followed. It solved the actual use case I'd had in mind all along, only I didn't realize until it was nearly done.
