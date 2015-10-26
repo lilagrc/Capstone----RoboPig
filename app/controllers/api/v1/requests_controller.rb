@@ -1,8 +1,7 @@
 class Api::V1::RequestsController < Api::ApiController
-  include ActiveRecord::Callbacks
 
   before_action :authenticate
-  after_update :refresh
+
 
   # method to send pi information from request db
   def run_pi
@@ -30,17 +29,11 @@ class Api::V1::RequestsController < Api::ApiController
     if params["request"] == "success"
       @request.update(body: nil, schedule: nil)
       add_feeding(pet)
-      flash[:notice] = "Your pet has been fed."
-      redirect_to root_path
     end
 
     render :nothing => true
   end
 
-  def refresh
-    flash[:notice] = "Your pet has been fed."
-    render "home/index"
-  end
 
   private
 
