@@ -16,4 +16,24 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
+// $(function(){
+//   if ($("#container").length > 0) {
+//     setTimeout(updateAlerts, 10000);
+//   }
+
+
+//
+//   }
+
+// })
+
+// function updateAlerts() {
+//   $.getScript("/")
+//   setTimeout(updateAlerts, 10000);
+// }
+
+// function updateFeedcount () {
+
+
+// }
 
