@@ -1,6 +1,7 @@
 class Api::V1::RequestsController < Api::ApiController
 
   before_action :authenticate
+  after_update :refresh
 
   # method to send pi information from request db
   def run_pi
@@ -26,10 +27,7 @@ class Api::V1::RequestsController < Api::ApiController
     @request = Request.find_by(pet_id: pet.id)
 
     if params["request"] == "success"
-      @request.body = nil
-      @request.schedule = nil
-      @request.save
-
+      @request.update(body: nil, schedule: nil)
       add_feeding(pet)
     end
 
@@ -37,6 +35,11 @@ class Api::V1::RequestsController < Api::ApiController
   end
 
   private
+
+  def refresh
+    flash[:notice] = "Your pet has been fed."
+    redirect_to root_path
+  end
 
   def add_feeding(pet)
     #only handles one pet per user for now
