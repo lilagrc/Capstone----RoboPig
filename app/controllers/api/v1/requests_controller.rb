@@ -37,12 +37,13 @@ class Api::V1::RequestsController < Api::ApiController
     render :nothing => true
   end
 
-  private
-
   def refresh
     flash[:notice] = "Your pet has been fed."
-    redirect_to root_path
+    render "home/index"
   end
+
+  private
+
 
   def add_feeding(pet)
     #only handles one pet per user for now
