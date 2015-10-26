@@ -1,4 +1,5 @@
 class Api::V1::RequestsController < Api::ApiController
+  include ActionController::Callbacks
 
   before_action :authenticate
   after_update :refresh
