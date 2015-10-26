@@ -1,15 +1,26 @@
+<div class="page-header">
+    <%= link_to root_path, class: "btn btn-default" do %><i class="glyphicon glyphicon-home"></i>
+    <% end %>
+</div>
 <br>
 <br>
+<p><h4>Add a scheduled feeding time:
+  <ul>
+    <li>Hours are in military time (0-23, 13 = 1pm).</li>
+    <li>This will feed your pet at the same time each day.</li>
+    <li>You can only enter one feeding at a time.</li>
+  </ul>
+</h4></p>
+
 <div class="row">
   <div class="col-md-6">
     <%= form_for @request, url: timer_path do |f| %>
       <div class="form-group">
-        <h4>Add a schedule feeding time below. Enter Feed Time in Military Time (0-23, 13 = 1pm). This will feed your pet at this time each day.</h4>
         <fieldset>
           <%= f.label "Feed Times" %>
-          <%= f.text_field :schedule, placeholder: "ex. 11", class:"form-control" %>
+          <%= f.select :schedule, options_for_select(0..23) %>
 
-          <%= f.submit "Schedule Feeding" %>
+          <%= f.submit "Schedule Feeding", class: "btn btn-default" %>
         </fieldset>
       </div>
     <% end %>

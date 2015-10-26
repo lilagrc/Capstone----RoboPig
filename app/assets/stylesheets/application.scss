@@ -27,7 +27,6 @@
   padding: 0 !important;
   margin: 0;
   font-family: 'Play', sans-serif;
-  color: white;
  }
 
  h1 {
@@ -49,8 +48,11 @@ h5 {
   text-align: center;
 }
 
-h2  {
+h2, h4 {
+  border-radius: 10px;
+  background-color: rgba(183, 193, 193, .9);
   color: white;
+  padding: 1em;
 }
 
 
