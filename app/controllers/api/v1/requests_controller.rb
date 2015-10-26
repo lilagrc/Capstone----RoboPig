@@ -30,6 +30,8 @@ class Api::V1::RequestsController < Api::ApiController
     if params["request"] == "success"
       @request.update(body: nil, schedule: nil)
       add_feeding(pet)
+      flash[:notice] = "Your pet has been fed."
+      redirect_to root_path
     end
 
     render :nothing => true
