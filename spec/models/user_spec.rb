@@ -15,10 +15,10 @@ RSpec.describe User, type: :model do
     let(:user)   { build(:user) }
     let(:pet)    { build(:pet)}
 
-    it "has one to many pets" do
-      user.pets << pet
-      expect(user.pets.length).to eq 1
-      expect(user.pets.first.name).to eq "Mulder"
+    it "user belongs to a pet/feeder" do
+      pet.users << user
+      expect(pet.users.length).to eq 1
+      expect(pet.users.first.name).to eq "Scully"
     end
   end
 

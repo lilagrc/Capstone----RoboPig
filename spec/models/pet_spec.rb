@@ -22,10 +22,10 @@ RSpec.describe Pet, type: :model do
       expect(pet.feedings.first.amount).to eq 2
     end
 
-    it "belongs to a user" do
-      user.pets << pet
+    it "has one to many users" do
+      pet.users << user
 
-      expect(pet.user.id).to eq 1
+      expect(pet.users.first.id).to eq 1
     end
   end
 end

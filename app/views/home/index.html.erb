@@ -78,7 +78,6 @@
 <br>
   <div class="row">
     <div class="col-xs-12">
-      <p>Tweet about your pet!</p>
         <% today = Time.now.strftime("%I:%M,%m/%d") %>
         <% url = "https://twitter.com/intent/tweet?text=Fed%20my%20fat%20cat%20at%20" + today.to_s + "%20via" %>
         <a class="twitter-share-button" href=<%= url %> data-size="large"> Tweet</a>

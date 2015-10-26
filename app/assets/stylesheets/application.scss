@@ -43,7 +43,7 @@
   /*background: rgba(183, 193, 193, .9);*/
 }
 
-h5 {
+h5, h3 {
   color: white;
   text-align: center;
 }
@@ -90,6 +90,7 @@ h2, h4 {
 #dropdownMenu1 {
   background-color: transparent;
   border: 1px solid white;
+  color: white;
 }
 
 .panel-group {
@@ -99,6 +100,10 @@ h2, h4 {
 #profile_details {
   border-radius: 10px;
   background-color: rgba(183, 193, 193, .9);
+}
+
+#logged_in {
+  display: inline;
 }
 /*
 h1 {

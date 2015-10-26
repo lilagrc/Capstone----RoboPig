@@ -11,14 +11,5 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe Api::V1::RequestsHelper, type: :helper do
-  describe "run_pi" do
-    it "returns json" do
-      create :user
-      food_request = Request.create(id: 1, body: "feed", schedule: nil, user_id: 1)
 
-      # get :run_pi
-
-      expect(response.header['Content-Type']).to include 'application/json'
-    end
-  end
 end

@@ -1,67 +1,67 @@
  <div class="page-header">
     <%= link_to root_path, class: "btn btn-default" do %><i class="glyphicon glyphicon-home"></i>
     <% end %>
+    <h5 id="logged_in">Logged in as: <%= @user.name %></h5>
 </div>
 
 <br>
 <br>
 
+<% if @user.pet_id != nil %>
 <div class="row">
   <div class="col-md-12" id="profile_details">
-    <h2>Logged in as: <%= @user.name %></h2>
-    <% if @user.pet_id != nil %>
-      <h2>Your registered pet: <%= @pet.name %> </h2>
-      <h2>Your pet token: <%= @pet.api_key %></h2>
-    <% else %>
-      <h2>You have no registered pets.</h2>
-    <% end %>
+      <h4>Registered pet: <%= @pet.name %> </h4>
   </div>
 </div>
 
-<h2 id="profile_details">Feeding Statistics</h2>
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingOne">
-      <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Pet Token
+          </a>
+        </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body">
+          <h6>This token should only be shared with people you trust to feed your pet. It will allow them access to your feeder.</h6>
+          <%= @pet.api_key %>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingTwo">
+        <h4 class="panel-title">
+          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Food Supply
+          </a>
+        </h4>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+        <div class="panel-body">
           Current Food Supply
-        </a>
-      </h4>
+        </div>
+      </div>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-      <div class="panel-body">
-        <iframe src="https://33.media.tumblr.com/3c6cb4af958b830b3b79bf4d30b3afd3/tumblr_nw65pqLj8o1terwlso1_400.gif" width="480" height="241" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingThree">
+        <h4 class="panel-title">
+          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Average Daily Food Intake
+          </a>
+        </h4>
+      </div>
+      <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+        <div class="panel-body">
+          Some more stat info that I haven't sorted out yet.
+        </div>
       </div>
     </div>
   </div>
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingTwo">
-      <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Average Feedings Per Day
-        </a>
-      </h4>
-    </div>
-    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-      <div class="panel-body">
-        Some info about feedings per day
-      </div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingThree">
-      <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Trends over time?
-        </a>
-      </h4>
-    </div>
-    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-      <div class="panel-body">
-        Some more stat info that I haven't sorted out yet.
-      </div>
-    </div>
-  </div>
-</div>
+
+<% else %>
+    <h2>You have no registered pets.</h2>
+<% end %>
 
 

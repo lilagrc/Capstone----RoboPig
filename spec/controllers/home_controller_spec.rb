@@ -5,6 +5,7 @@ RSpec.describe HomeController, type: :controller do
     let (:log_in) {
     logged_user = create :user
     session[:user_id] = logged_user.id
+    create :pet
   }
     it "checks if session exists and assigns @user instance variable" do
       log_in

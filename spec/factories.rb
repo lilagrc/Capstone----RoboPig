@@ -10,14 +10,14 @@ FactoryGirl.define do  factory :request do
     name "Scully"
     uid "1234"
     provider "twitter"
-    api_key "1234"
+    pet_id 1
   end
 
   factory :pet do
     id 1
     name "Mulder"
     breed "Siamese"
-    user_id 1
+    api_key "1234"
   end
 
   factory :feeding do

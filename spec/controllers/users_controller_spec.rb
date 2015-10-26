@@ -4,7 +4,8 @@ RSpec.describe UsersController, type: :controller do
   describe "#index" do
     let(:log_in) {
     @logged_user = create :user
-    session[:user_id] = @logged_user.id }
+    session[:user_id] = @logged_user.id
+    create :pet }
 
     before :each do
       log_in
