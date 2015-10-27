@@ -18,23 +18,23 @@
 
 // $('.collapse').collapse()
 
-// $(function() {
-//    $("#feed_button").click(function(event) {
-//      event.preventDefault();
+$(function() {
+   $("#feed_button").click(function(event) {
+     event.preventDefault();
 
-//       var button = $(this);
-//       var formTag = button.parent('form');
-//       var url = formTag.attr('action');
-//       var method = formTag.attr('method');
+      var button = $(this);
+      var formTag = button.parent('form');
+      var url = formTag.attr('action');
+      var method = formTag.attr('method');
 
 
-//     $.ajax(url, {
-//       type: method,
-//       success: function (data) {
-//       }
-//     });
-//   });
-// });
+    $.ajax(url, {
+      type: method,
+      success: function (data) {
+      }
+    });
+  });
+});
 
 
 $(document).ready(function() {
