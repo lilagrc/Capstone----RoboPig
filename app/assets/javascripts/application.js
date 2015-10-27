@@ -16,6 +16,32 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
+$(function() {
+   $("#feed_button").click(function(event) {
+     event.preventDefault();
+
+      var button = $(this);
+      var formTag = button.parent('form');
+      var url = formTag.attr('action');
+      var method = formTag.attr('method');
+      console.log(button);
+      console.log(formTag);
+      console.log(url);
+
+    $.ajax(url, {
+      type: method,
+      success: function (data) {
+
+      }
+    });
+  });
+});
+
+
+
+
+
+
 // $(function(){
 //   if ($("#container").length > 0) {
 //     setTimeout(updateAlerts, 10000);

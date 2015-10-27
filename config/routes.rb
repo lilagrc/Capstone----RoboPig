@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get "logout", to: "sessions#destroy", as: "logout"
 
   # route to update db to save request as "feed"
-  put "/feed_request", to: "pi#feed_request", as: "feed_request"
+  post "/feed_request", to: "pi#feed_request", as: "feed_request"
   get "/new_schedule", to: "pi#new_schedule", as: "schedule"
   patch "/set_timer", to: "pi#set_timer", as: "timer"
   put "/cancel_feeding", to: "pi#cancel_feeding", as: "cancel"
