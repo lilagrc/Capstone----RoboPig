@@ -11,6 +11,18 @@ class HomeController < ApplicationController
     find_num_feedings
   end
 
+  def check_db
+    user = User.find(session[:user_id])
+    pet = Pet.find(user.pet_id)
+    request = Request.find_by(pet_id: pet.id)
+
+    if request.body == nil && request.schedule == nil
+      render status: 200
+    else
+      render status: 500
+    end
+  end
+
   private
 
   def find_num_feedings

@@ -16,24 +16,21 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-// $(function(){
-//   if ($("#container").length > 0) {
-//     setTimeout(updateAlerts, 10000);
-//   }
+var url = "http://www.robofeedpet.com/home/check_db"
+
+$.ajax({url, {
+    type: get,
+    success: function() {
+      setTimeout(poll(), 1000);
+    }
+  }
+});
 
 
-//
-//   }
+function poll(){
+var url = "http://www.robofeedpet.com/home/check_db"
 
-// })
+  $.ajax({url, {
+    type: get,
 
-// function updateAlerts() {
-//   $.getScript("/")
-//   setTimeout(updateAlerts, 10000);
-// }
-
-// function updateFeedcount () {
-
-
-// }
-
+}
