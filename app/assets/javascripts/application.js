@@ -24,9 +24,7 @@ $(function() {
       var formTag = button.parent('form');
       var url = formTag.attr('action');
       var method = formTag.attr('method');
-      console.log(button);
-      console.log(formTag);
-      console.log(url);
+
 
     $.ajax(url, {
       type: method,
@@ -66,6 +64,23 @@ $(function() {
   });
 });
 
+
+
+
+
+
+
+    //   var button = $(this);
+    //   var formTag = button.parent('form');
+    //   var url = formTag.attr('action');
+    //   var method = formTag.attr('method');
+
+    // $.ajax(url, {
+    //   type: method,
+    //   success: function (data) {
+
+    //   }
+    // });
 
 
 
