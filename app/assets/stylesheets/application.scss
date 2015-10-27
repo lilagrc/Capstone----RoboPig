@@ -48,7 +48,7 @@ h5, h3 {
   text-align: center;
 }
 
-h2, h4 {
+h2 {
   border-radius: 10px;
   background-color: rgba(183, 193, 193, .9);
   color: white;
@@ -106,8 +106,17 @@ h2, h4 {
   display: inline;
 }
 
-.schedule_form_header, li, h4 {
+.schedule_form_header, h4 {
   text-align: left;
+  color: white;
+  padding-left: 2em;
+  padding-top: 3px;
+  margin: 5px;
+}
+
+.schedule_form {
+  border-radius: 10px;
+  background-color: rgba(183, 193, 193, .9);
 }
 /*
 h1 {
