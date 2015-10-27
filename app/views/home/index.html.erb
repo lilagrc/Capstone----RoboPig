@@ -49,7 +49,7 @@
 <% if @user.pet_id != nil %>
   <div class="row">
     <div class="col-xs-12", id="feed_details">
-      <h3><%= @pet.name %> has been fed <%= @num_feedings %> times today</h3>
+      <h3><%= @pet.name %> has been fed <div class="num_feedings"><%= @num_feedings %></div> times today</h3>
     </div>
   </div>
   <br>

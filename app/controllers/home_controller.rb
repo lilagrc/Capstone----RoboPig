@@ -11,6 +11,13 @@ class HomeController < ApplicationController
     find_num_feedings
   end
 
+  def check_db
+
+    feedings = find_num_feedings
+
+    render json: {num: feedings}
+  end
+
   private
 
   def find_num_feedings
