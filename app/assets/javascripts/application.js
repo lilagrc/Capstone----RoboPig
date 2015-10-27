@@ -16,6 +16,7 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
+// $('.collapse').collapse()
 
 $(function() {
    $("#feed_button").click(function(event) {
@@ -36,7 +37,7 @@ $(function() {
 });
 
 
-$(function() {
+$(document).ready(function() {
    $("#schedule_button").click(function(event) {
      event.preventDefault();
 

@@ -1,5 +1,5 @@
  <div class="page-header">
-    <%= link_to root_path, class: "btn btn-default" do %><i class="glyphicon glyphicon-home"></i>
+    <%= link_to root_path, { :'data-no-turbolink' =>  "true" }  do %><button class="btn btn-default"><i class="glyphicon glyphicon-home"></i></button>
     <% end %>
     <h5 id="logged_in">Logged in as: <%= @user.name %></h5>
 </div>
@@ -18,7 +18,7 @@
     <div class="panel panel-default">
       <div class="panel-heading" role="tab" id="headingOne">
         <h4 class="panel-title">
-          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
             Pet Token
           </a>
         </h4>
