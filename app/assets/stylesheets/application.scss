@@ -50,7 +50,7 @@ h5, h3 {
 
 h2 {
   border-radius: 10px;
-  background-color: rgba(183, 193, 193, .9);
+  background-color: rgba(0, 0, 0, .1);
   color: white;
   padding: 1em;
 }
@@ -65,7 +65,7 @@ h2 {
   #feed_details {
     text-align: center;
     border-radius: 10px;
-    background-color: rgba(183, 193, 193, .9);
+    background-color: rgba(0, 0, 0, .1);
   }
 
   #feed_button {
@@ -98,25 +98,30 @@ h2 {
 }
 
 #profile_details {
-  border-radius: 10px;
-  background-color: rgba(183, 193, 193, .9);
+  color: white;
 }
 
 #logged_in {
   display: inline;
 }
 
-.schedule_form_header, h4 {
+.schedule_form_header, li, h4 {
   text-align: left;
-  color: white;
-  padding-left: 2em;
   padding-top: 3px;
   margin: 5px;
+  list-style-type: none;
+  padding-left: 1px;
+  color: white;
 }
 
 .schedule_form {
   border-radius: 10px;
-  background-color: rgba(183, 193, 193, .9);
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.twitter {
+  float: right;
+  margin-top: 5px;
 }
 /*
 h1 {

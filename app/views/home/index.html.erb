@@ -1,5 +1,10 @@
 <% if logged_in? %>
-  <div class="page-header">
+<div class="page-header">
+  <span class="twitter">
+        <% today = Time.now.strftime("%I:%M,%m/%d") %>
+        <% url = "https://twitter.com/intent/tweet?text=Fed%20my%20fat%20cat%20at%20" + today.to_s + "%20via" %>
+        <a class="twitter-share-button" href=<%= url %> data-size="large"> Tweet</a>
+      </span>
     <div class="dropdown">
       <button type="button" class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" aria-label="Left Align">
         <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
@@ -7,12 +12,11 @@
       <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
         <% if logged_in? %>
           <li><%= link_to "Profile", user_path(session[:user_id]) %></li>
-          <li>  Tutorial</li>
           <li><%= link_to "Log Out", logout_path %></li>
         <% end %>
       </ul>
     </div>
-  </div>
+</div>
 <% end %>
 
   <div class="row" id="header_text">
@@ -82,10 +86,7 @@
 <br>
   <div class="row">
     <div class="col-xs-12">
-        <% today = Time.now.strftime("%I:%M,%m/%d") %>
-        <% url = "https://twitter.com/intent/tweet?text=Fed%20my%20fat%20cat%20at%20" + today.to_s + "%20via" %>
-        <a class="twitter-share-button" href=<%= url %> data-size="large"> Tweet</a>
-  </div>
+
   </div>
 <% end %>
 
