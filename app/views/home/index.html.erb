@@ -56,9 +56,9 @@
   <br>
   <div class="row">
     <div class="col-xs-12">
-      <%= button_to "Feed Now", feed_request_path, class: "btn btn-default", id: "feed_button", :method => :put %>
+      <%= button_to "Feed Now", feed_request_path, class: "btn btn-default", id: "feed_button" %>
       <br>
-      <%= button_to "Schedule a Feeding", schedule_path, method: :get, class: "btn btn-default" %>
+      <%= button_to "Schedule a Feeding", schedule_path, method: :get, class: "btn btn-default", id: "schedule_button" %>
       <br>
       <%= button_to "Cancel Feedings", cancel_path, method: :put, data: { confirm: "This will delete all schedule feedings. Proceed?"}, class: "btn btn-default", id: "cancel_button" %>
     </div>

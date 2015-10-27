@@ -31,11 +31,12 @@ $(function() {
     $.ajax(url, {
       type: method,
       success: function (data) {
-
       }
     });
   });
 });
+
+
 
 
 
