@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   get "/api/v1/requests/new", to: "api/v1/requests#run_pi", as: "pi"
   put "/api/v1/requests/confirmation", to: "api/v1/requests#confirmation", as: "pi_confirmation"
 
-  get "home/check_db", to: "home/check_db", as: "check_db"
+  get "/check_db", to: "home#check_db", as: "check_db"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

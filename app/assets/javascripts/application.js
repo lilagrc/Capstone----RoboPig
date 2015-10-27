@@ -66,47 +66,34 @@ $(function() {
 });
 
 
+// keep track of how many feeding there are. If number increases, update num_feedings heading, and flash now message confirmation pet fed.
+// ajax could hit url of check_db for values of request OR check for increased feedings.
 
-
-
-
-
-    //   var button = $(this);
-    //   var formTag = button.parent('form');
-    //   var url = formTag.attr('action');
-    //   var method = formTag.attr('method');
-
-    // $.ajax(url, {
-    //   type: method,
-    //   success: function (data) {
-
-    //   }
-    // });
-
-
-
-
-
-
-// $(function(){
-//   if ($("#container").length > 0) {
-//     setTimeout(updateAlerts, 10000);
-//   }
-
-
-$.ajax({url, {
-    type: get,
-    success: function() {
-      setTimeout(poll(), 1000);
-    }
-  }
-});
+$(function() {
+    setTimeout(poll, 10000);
+  });
 
 
 function poll(){
-var url = "http://www.robofeedpet.com/home/check_db"
+  var url = "check_db"
+  var old_count = $(".num_feedings").html()
 
-  $.ajax({url, {
-    type: get,
+  console.log(old_count)
 
-}
+    $.ajax(url, {
+      type: "GET",
+      success: function (data) {
+        var new_count = data.num;
+        console.log(new_count);
+
+        if (new_count > old_count) {
+          $(".num_feedings").replaceWith(new_count);
+          alert("Your pet has been fed!");
+        }
+
+        setTimeout(poll, 10000);
+      }
+    })
+  }
+
+
