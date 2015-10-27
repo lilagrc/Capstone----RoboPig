@@ -37,6 +37,35 @@ $(function() {
 });
 
 
+$(function() {
+   $("#schedule_button").click(function(event) {
+     event.preventDefault();
+
+      var button = $(this);
+      var formTag = button.parent('form');
+      var url = formTag.attr('action');
+      var method = formTag.attr('method');
+
+    $.ajax(url, {
+      type: method,
+      datatype:'html',
+      success: function (data) {
+
+      var form = $(".schedule_form")
+
+
+      if (form.hasClass("added")) {
+        form.empty();
+        form.removeClass("added");
+      } else {
+        form.append(data);
+        form.addClass( "added" );
+      }
+      }
+    });
+  });
+});
+
 
 
 

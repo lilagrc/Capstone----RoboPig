@@ -29,6 +29,10 @@ class PiController < ApplicationController
     @request.schedule = nil
     @request.body = nil
     @request.save
+
+    respond_to do |format|
+      format.html { render :layout => false, :partial => 'home/schedule'}
+    end
   end
 
   def set_timer
