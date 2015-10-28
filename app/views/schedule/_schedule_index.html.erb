@@ -1,5 +1,9 @@
 
-<% @scheduled_feedings.each do |feeding| %>
-  <h3>Everyday at <%= format_time(feeding.time) %></h3>
+<% if @scheduled_feedings != []  %>
+  <% @scheduled_feedings.each do |feeding| %>
+    <h3>Everyday at <%= format_time(feeding.time) %></h3>
+  <% end %>
+<% else %>
+  <h3>There are no scheduled feedings.</h3>
 <% end %>
 

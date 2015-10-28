@@ -138,7 +138,11 @@ h2 {
 
 .schedule_form {
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, .2);
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.schedule_form a {
+  color: white;
 }
 
 iframe {
