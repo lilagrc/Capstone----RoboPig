@@ -1,8 +1,6 @@
 class Api::V1::RequestsController < Api::ApiController
 
   before_action :authenticate
-  before_action
-
 
   # method to send pi information from request db
   def run_pi
@@ -30,6 +28,7 @@ class Api::V1::RequestsController < Api::ApiController
     if params["request"] == "success"
       @request.update(body: nil, schedule: nil)
       add_feeding(pet)
+      update_current_supply(pet)
     end
 
     render :nothing => true
@@ -46,8 +45,6 @@ class Api::V1::RequestsController < Api::ApiController
     # new_feeding.date = Time.now.strftime(%I:%M,%m/%d/%y)
     new_feeding.amount = 1
     new_feeding.save
-
-    update_current_supply(pet)
   end
 
   def update_current_supply(pet)
