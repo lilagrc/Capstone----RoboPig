@@ -1,0 +1,5 @@
+
+<% @scheduled_feedings.each do |feeding| %>
+  <h3>Everyday at <%= format_time(feeding.time) %></h3>
+<% end %>
+

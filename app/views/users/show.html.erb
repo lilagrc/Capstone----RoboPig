@@ -52,6 +52,22 @@
         </div>
       </div>
     </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingFour">
+        <h4 class="panel-title">
+          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            Current Feed Schedule
+          </a>
+        </h4>
+      </div>
+      <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+        <div class="panel-body">
+          <div class="col-md-6" id="scheduled_feedings">
+          <%= render 'schedule/schedule_index' %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
 <% else %>

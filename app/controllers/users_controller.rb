@@ -4,6 +4,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(session[:user_id])
     @pet = Pet.find(@user.pet_id)
+    scheduled_feedings = Schedule.all
+    @scheduled_feedings = scheduled_feedings.order(:time)
   end
 
   def edit

@@ -29,6 +29,8 @@ class PiController < ApplicationController
     request.save
     flash[:notice] = "Your feeding has been scheduled. You can schedule another feeding time by clicking 'Schedule a Feeding'"
 
+    add_new_schedule
+
     redirect_to root_path
   end
 
@@ -38,10 +40,22 @@ class PiController < ApplicationController
     request.schedule = "cancel"
     request.save
     flash[:notice] = "Your feedings have been cancelled"
+
+    remove_scheduled_feedings
+
     redirect_to root_path
   end
 
   private
+
+  def add_new_schedule
+    s = Schedule.create(time: params["request"]["schedule"])
+    s.save
+  end
+
+  def remove_scheduled_feedings
+    Schedule.delete_all
+  end
 
   def find_pet
     user = User.find(session[:user_id])

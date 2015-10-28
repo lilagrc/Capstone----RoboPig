@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   resources :pets, only: [:new, :create]
 
+  get "/schedules", to: "schedule#index", as: "schedules"
+
 
   get "logout", to: "sessions#destroy", as: "logout"
 
