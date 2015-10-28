@@ -1,11 +1,23 @@
 <% if logged_in? %>
+
+<script>window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+    return t;
+  }(document, "script", "twitter-wjs"));
+</script>
+
 <div class="page-header">
-  <span class="twitter">
-        <% today = Time.now.strftime("%I:%M,%m/%d") %>
-        <% url = "https://twitter.com/intent/tweet?text=Fed%20my%20fat%20cat%20at%20" + today.to_s + "%20via" %>
-        <a class="twitter-share-button" href=<%= url %> data-size="large"> Tweet</a>
-      </span>
-    <div class="dropdown">
+  <div class="dropdown">
       <button type="button" class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" aria-label="Left Align">
         <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
       </button>
@@ -16,6 +28,12 @@
         <% end %>
       </ul>
     </div>
+
+        <% today = Time.now.strftime("%I:%M,%m/%d") %>
+        <% url = "https://twitter.com/intent/tweet?text=Fed%20my%20fat%20cat%20at%20" + today.to_s + "%20via" %>
+        <a class="twitter-share-button" href=<%= url %> data-size="large" data-count value="none"> Tweet</a>
+
+
 </div>
 <% end %>
 
@@ -30,23 +48,7 @@
   </div>
 
 <% if logged_in? %>
-  <script>window.twttr = (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0],
-        t = window.twttr || {};
-      if (d.getElementById(id)) return t;
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "https://platform.twitter.com/widgets.js";
-      fjs.parentNode.insertBefore(js, fjs);
 
-      t._e = [];
-      t.ready = function(f) {
-        t._e.push(f);
-      };
-
-      return t;
-    }(document, "script", "twitter-wjs"));
-  </script>
 
 <br>
   <% if @user.pet_id != nil %>

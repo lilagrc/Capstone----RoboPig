@@ -1,4 +1,7 @@
-FactoryGirl.define do  factory :request do
+FactoryGirl.define do  factory :schedule do
+    time "MyString"
+  end
+  factory :request do
     body "MyString"
   end
   factory :tweet do

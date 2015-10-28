@@ -1,0 +1,11 @@
+<div class="page-header">
+    <%= link_to root_path, { :'data-no-turbolink' =>  "true" }  do %><button class="btn btn-default"><i class="glyphicon glyphicon-home"></i></button>
+    <% end %>
+</div>
+
+<div class="row">
+    <div class="col-md-6" id="scheduled_feedings">
+      <h2>Current Feeding Schedule</h2>
+      <%= render 'schedule_index'  %>
+    </div>
+</div>

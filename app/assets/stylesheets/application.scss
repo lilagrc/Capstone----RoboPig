@@ -102,10 +102,17 @@ h2 {
     text-align: center;
   }
 
+
 #dropdownMenu1 {
   background-color: transparent;
   border: 1px solid white;
   color: white;
+
+}
+
+.dropdown {
+  width: 50px;
+  display: inline;
 }
 
 .panel-group {
@@ -131,16 +138,35 @@ h2 {
 
 .schedule_form {
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, .1);
+  background-color: rgba(0, 0, 0, .5);
 }
 
-.twitter {
+.schedule_form a {
+  color: white;
+}
+
+iframe {
   float: right;
   margin-top: 5px;
 }
 
 .new_pet_form {
   text-align: center;
+}
+
+.schedule_label {
+  color: white;
+}
+
+#scheduled_feedings {
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, .3);
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+#scheduled_feedings, h3 {
+  color: white;
 }
 
 footer {
