@@ -3,9 +3,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(session[:user_id])
-    @pet = Pet.find(@user.pet_id)
-    scheduled_feedings = Schedule.all
-    @scheduled_feedings = scheduled_feedings.order(:time)
+    if @user.pet_id != nil
+      @pet = Pet.find(@user.pet_id)
+      scheduled_feedings = Schedule.all
+      @scheduled_feedings = scheduled_feedings.order(:time)
+    end
   end
 
   def edit
@@ -21,7 +23,6 @@ class UsersController < ApplicationController
 
     if pet != nil
       user.pet_id = pet.id
-      user.pet_api = token
       user.save
       redirect_to user_path
     else

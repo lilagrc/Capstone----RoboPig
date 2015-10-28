@@ -26,8 +26,8 @@ class PetsController < ApplicationController
     pet = Pet.find(user.pet_id)
     pet.api_key = Pet.generate_api_key
     pet.save
-    user.pet_api = pet.api_key
-    user.save
+
+    remove_pet_links(pet)
 
     redirect_to user_path(session[:user_id])
   end
@@ -38,6 +38,14 @@ class PetsController < ApplicationController
     params.permit(pet: [:name, :breed])
   end
 
+  def remove_pet_links(pet)
+    users = pet.users
 
-
+    users.each do |user|
+      unless pet.master_user == user.id
+        user.pet_id = nil
+        user.save
+      end
+    end
+  end
 end
