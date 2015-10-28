@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 
     if pet != nil
       user.pet_id = pet.id
+      user.pet_api = token
       user.save
       redirect_to user_path
     else

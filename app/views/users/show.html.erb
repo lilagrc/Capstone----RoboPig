@@ -8,6 +8,7 @@
 <br>
 
 <% if @user.pet_id != nil %>
+ <% if @pet.master_user == @user.id %>
   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     <div class="panel panel-default">
       <div class="panel-heading" role="tab" id="headingOne">
@@ -21,12 +22,12 @@
         <div class="panel-body">
           <h6>This token should only be shared with people you trust to feed your pet. It will allow them access to your feeder.</h6>
           <%= @pet.api_key %>
-        <% if @pet.master_user == @user.id %>
+          <br>
           <%= button_to "Regenerate Pet Token", regenerate_path, class: "btn btn-default" %>
-        <% end %>
         </div>
       </div>
     </div>
+    <% end %>
     <div class="panel panel-default">
       <div class="panel-heading" role="tab" id="headingTwo">
         <h4 class="panel-title">
