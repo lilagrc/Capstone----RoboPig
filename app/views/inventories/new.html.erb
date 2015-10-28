@@ -1,0 +1,16 @@
+<h1>Add Supply Information</h1>
+
+<%= form_for @inventory do |f| %>
+<legend>Please enter the weight of the current supply in ounces.</legend>
+  <div class="form-group">
+    <fieldset>
+      <%= f.label :current_supply %>
+      <%= f.text_field :current_supply, class:"form-control" %>
+
+      <%= f.label :feeding_amount %>
+      <%= f.text_field :feeding_amount, class:"form-control" %>
+
+      <%= f.submit "Submit", class: "btn btn-default"%>
+    </fieldset>
+  </div>
+<% end %>

@@ -46,6 +46,15 @@ class Api::V1::RequestsController < Api::ApiController
     # new_feeding.date = Time.now.strftime(%I:%M,%m/%d/%y)
     new_feeding.amount = 1
     new_feeding.save
+
+    update_current_supply
+  end
+
+  def update_current_supply
+    inventory = Inventory.find_by(pet_id: @pet.id)
+    current_supply = inventory.current_supply - inventory.feeding_amount
+    inventory.current_supply = current_supply
+    inventory.save
   end
 
 end

@@ -39,8 +39,17 @@
       </div>
       <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
         <div class="panel-body">
+        <% if @inventory == nil %>
           Track food inventory
-          <%= link_to "Add inventory", new_inventory_path, class: "btn btn-default" %>
+          <%= link_to "Add feeder information", new_inventory_path, class: "btn btn-default" %>
+        <% end %>
+        <% if @inventory != nil %>
+          Current Food Supply <%= @inventory.current_supply %> ounces
+          <br>
+          <br>
+          Update Current Supply
+          <%= link_to "Update", edit_inventory_path, class: "btn btn-default" %>
+        <% end %>
         </div>
       </div>
     </div>

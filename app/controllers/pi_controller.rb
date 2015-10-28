@@ -57,9 +57,4 @@ class PiController < ApplicationController
     Schedule.delete_all
   end
 
-  def find_pet
-    user = User.find(session[:user_id])
-    @pet = Pet.find(user.pet_id)
-  end
-
 end
