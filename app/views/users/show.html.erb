@@ -2,6 +2,7 @@
     <%= link_to root_path, { :'data-no-turbolink' =>  "true" }  do %><button class="btn btn-default"><i class="glyphicon glyphicon-home"></i></button>
     <% end %>
     <h5 id="logged_in">Logged in as: <%= @user.name %></h5>
+    <%= image_tag(@user.profile_image, size: "40x37", class: "profile_image") %>
 </div>
 
 <br>

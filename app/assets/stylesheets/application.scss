@@ -104,10 +104,9 @@ h2 {
 
 
 #dropdownMenu1 {
-  background-color: transparent;
+  background-color: white;
   border: 1px solid white;
-  color: white;
-
+  /*color: white;*/
 }
 
 .dropdown {
@@ -148,6 +147,12 @@ h2 {
 iframe {
   float: right;
   margin-top: 5px;
+}
+
+.profile_image {
+  float: right;
+  clear: right;
+  display: inline;
 }
 
 .new_pet_form {
