@@ -6,6 +6,7 @@ class Pet < ActiveRecord::Base
   has_many :users
   has_many :feedings
   has_many :requests
+  has_many :inventories
 
   def self.generate_api_key
       token = SecureRandom.base64.tr('+/=', 'Qrt')
