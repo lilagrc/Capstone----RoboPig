@@ -1,6 +1,7 @@
 class Api::V1::RequestsController < Api::ApiController
 
   before_action :authenticate
+  before_action
 
 
   # method to send pi information from request db
@@ -38,7 +39,6 @@ class Api::V1::RequestsController < Api::ApiController
 
   private
 
-
   def add_feeding(pet)
     #only handles one pet per user for now
     new_feeding = Feeding.new
@@ -47,11 +47,11 @@ class Api::V1::RequestsController < Api::ApiController
     new_feeding.amount = 1
     new_feeding.save
 
-    update_current_supply
+    update_current_supply(pet)
   end
 
-  def update_current_supply
-    inventory = Inventory.find_by(pet_id: @pet.id)
+  def update_current_supply(pet)
+    inventory = Inventory.find_by(pet_id: pet.id)
     current_supply = inventory.current_supply - inventory.feeding_amount
     inventory.current_supply = current_supply
     inventory.save
