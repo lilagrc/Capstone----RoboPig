@@ -1,10 +1,10 @@
 class PiController < ApplicationController
   before_action :require_login
+  before_action :find_pet
+
 
   def feed_request
-    user = User.find(session[:user_id])
-    pet = Pet.find(user.pet_id)
-    request = Request.where(pet_id: pet.id).first_or_initialize
+    request = Request.where(pet_id: @pet.id).first_or_initialize
     request.schedule = nil
     request.body = "feed"
     request.save
@@ -12,20 +12,8 @@ class PiController < ApplicationController
     redirect_to root_path
   end
 
-  # def reset_request
-  #   request = Request.find(1)
-  #   request.body = "none"
-  #   request.save
-
-  #   redirect_to root_path
-  # end
-
-  # method to update db with info on timer changes
-
   def new_schedule
-    user = User.find(session[:user_id])
-    pet = Pet.find(user.pet_id)
-    @request = Request.where(pet_id: pet.id).first_or_initialize
+    @request = Request.where(pet_id: @pet.id).first_or_initialize
     @request.schedule = nil
     @request.body = nil
     @request.save
@@ -36,9 +24,7 @@ class PiController < ApplicationController
   end
 
   def set_timer
-    user = User.find(session[:user_id])
-    pet = Pet.find(user.pet_id)
-    request = Request.find_by(pet_id: pet.id)
+    request = Request.find_by(pet_id: @pet.id)
     request.schedule = params["request"]["schedule"]
     request.save
     flash[:notice] = "Your feeding has been scheduled. You can schedule another feeding time by clicking 'Schedule a Feeding'"
@@ -47,14 +33,19 @@ class PiController < ApplicationController
   end
 
   def cancel_feeding
-    user = User.find(session[:user_id])
-    pet = Pet.find(user.pet_id)
-    request = Request.find_by(pet_id: pet.id)
+    request = Request.find_by(pet_id: @pet.id)
     request.body = nil
     request.schedule = "cancel"
     request.save
     flash[:notice] = "Your feedings have been cancelled"
     redirect_to root_path
+  end
+
+  private
+
+  def find_pet
+    user = User.find(session[:user_id])
+    @pet = Pet.find(user.pet_id)
   end
 
 end
