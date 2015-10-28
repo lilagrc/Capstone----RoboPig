@@ -9,6 +9,7 @@ class PetsController < ApplicationController
     user = User.find(session[:user_id])
     pet = Pet.create(create_params[:pet])
     pet.api_key = Pet.generate_api_key
+    pet.master_user = user.id
     user.pet_id = pet.id
     user.save
 
