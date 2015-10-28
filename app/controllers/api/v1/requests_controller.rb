@@ -43,7 +43,6 @@ class Api::V1::RequestsController < Api::ApiController
     new_feeding = Feeding.new
     new_feeding.pet_id = pet.id
     # new_feeding.date = Time.now.strftime(%I:%M,%m/%d/%y)
-    new_feeding.amount = 1
     new_feeding.save
   end
 
