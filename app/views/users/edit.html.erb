@@ -3,11 +3,13 @@
     <% end %>
 </div>
 
-<h2>Please search for your pet below.</h2>
+<div class="new_pet_form">
+  <h2>Please search for your pet below.</h2>
 
-<%= form_for @user do |f| %>
-  <%= f.label "Add pet token here" %>
-  <%= f.text_field :pet_id %>
+  <%= form_for @user do |f| %>
+    <%= f.label "Add pet token here" %>
+    <%= f.text_field :pet_id %>
 
-  <%= f.submit "Search for Pet" %>
-<% end %>
+    <%= f.submit "Search for Pet" %>
+  <% end %>
+</div>

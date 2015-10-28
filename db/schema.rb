@@ -25,9 +25,10 @@ ActiveRecord::Schema.define(version: 20151025190008) do
     t.string   "name"
     t.string   "breed"
     t.integer  "weight"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "api_key"
+    t.integer  "master_user"
   end
 
   create_table "requests", force: :cascade do |t|

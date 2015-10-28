@@ -72,11 +72,11 @@
 
   <% else %>
     <div class="row">
-      <div class="col-xs-12", id="feed_details">
-        <h2>Welcome to Robo Feeder! If you would like to instructions on building your own pet feeding robot, click here: </h2>
+      <div class="col-xs-12", id="landing_page">
           <h3><%= link_to "Register your robo feeder!",  new_pet_path(session[:user_id]) %></h3>
-          <h3>If someone in your household has already registered your feeder, you can link to their account below. You will need the correct pet token.</h3>
           <h3><%= link_to "Find Feeder", edit_user_path(session[:user_id]) %></h3>
+          <h5>If you have been given access to a registered feeder, you can link to their account below. You will need the correct pet token.</h5>
+          <h3>Tutorial for Building Feeder </h3>
       </div>
   <% end %>
 <% end %>

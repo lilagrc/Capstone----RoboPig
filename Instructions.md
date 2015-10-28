@@ -41,23 +41,82 @@ The site serves as an API for your Raspberry Pi.The example code below will make
 - Code
     + Servo Code
         The code to move the servo is quite simple.   
-             ```py
-            if r["request"] == "feed":
-            import servo1;
-            send_confirmation();
-            else:
-            print "No food now"
-            ```
+        ```python
+        import RPi.GPIO as GPIO
+        import time
+        import requests
+        import json
+
+        Servo1Pin=18
+
+        # Tell python what pin mode to use
+        GPIO.setmode(GPIO.BCM)
+        # Setup the Servos Pins
+        GPIO.setup(Servo1Pin, GPIO.OUT)
+
+        servo = GPIO.PWM(18, 100)
+        servo.start(10)
+        duty = float(400) / 10.0 + 2.5
+        servo.ChangeDutyCycle(duty)
+        time.sleep(.7)
+        servo.stop()
+
+        url = 'http://www.robofeedpet.com/api/v1/requests/confirmation'
+        headers = {'Authorization': 'Token token="cprEhA7dnDaYfNltctmAtgtt"'}
+        payload = {'request': 'success'}
+        r = requests.put(url, json=payload, headers=headers)
+        ```
     + API Code  
     The code below will send a request to the Robo Feeder website and recieve a response. The data in the response will dictate which action the Pi will perform. You can see more in the comments. 
-        ```py
-        placeholder for api.code
-        ```py
+    ```python
+        import requests
+        import json
+
+        from crontab import CronTab
+
+        # r = requests.put('http://www.robofeedpet.com/run_pi', data = {"feed":"yes"})
+        url = 'http://www.robofeedpet.com/api/v1/requests/new'
+        headers = {'Authorization': 'Token token="cprEhA7dnDaYfNltctmAtgtt"'}
+        r = requests.get(url, headers=headers)
+
+        r = r.json()
+        print r
+
+        if r["feed_request"] == None and r["schedule_request"] == None:
+          print "do nothing"
+        elif r["feed_request"] == "feed" and r["schedule_request"] == None:
+          import servo1;
+        elif r["schedule_request"] != "cancel" and r["feed_request"] == None:
+          time = r["schedule_request"]
+          time = int(time)
+
+          cron = CronTab(user='root')
+          cmd = 'sh /home/pi/schedule_launcher.sh'
+
+          duplicate = None
+
+          for job in cron:
+            if job.command == cmd:
+              duplicate = "yes"
+
+          if duplicate != "yes":
+            new_job = cron.new(cmd)
+            new_job.minute.on(0)
+            new_job.hour.on(time)
+            cron.write()
+        elif r["schedule_request"] == "cancel":
+          tab = CronTab(user='root')
+          cmd = 'sh /home/pi/schedule_launcher.sh'
+
+          cron_job = tab.find_command(cmd)
+          tab.remove_all(cmd)
+          tab.write()
+    ```
     + Cron  
         [Cron](https://www.raspberrypi.org/documentation/linux/usage/cron.md) is a useful way to schedule requests to the Robo Feeder API and website. You can use cron to poll the API and check for new feed requests or scheduled feedings. There are a [few tutorials](http://www.devils-heaven.com/raspberry-pi-cron-jobs/) out there that helped me understand cron jobs. 
         * To create new cron jobs, you can type 'sudo crontab -e' aenter new cron jobs.
         * The code below will run a cron job every 15 seconds. 
-            ```
+            ```shell
             - * * * * sleep 00; some_job
             - * * * * sleep 15; some_job
             - * * * * sleep 30; some_job
