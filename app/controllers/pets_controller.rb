@@ -21,6 +21,15 @@ class PetsController < ApplicationController
     end
   end
 
+  def regenerate_token
+    user = User.find(session[:user_id])
+    pet = Pet.find(user.pet_id)
+    pet.api_key = Pet.generate_api_key
+    pet.save
+
+    redirect_to user_path(session[:user_id])
+  end
+
   private
 
   def create_params

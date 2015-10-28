@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   resources :pets, only: [:new, :create]
 
+
+  post "regenerate", to: "pets#regenerate_token", as: "regenerate"
   get "/schedules", to: "schedule#index", as: "schedules"
 
 
