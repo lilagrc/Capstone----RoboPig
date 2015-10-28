@@ -7,6 +7,7 @@ class UsersController < ApplicationController
       @pet = Pet.find(@user.pet_id)
       scheduled_feedings = Schedule.all
       @scheduled_feedings = scheduled_feedings.order(:time)
+      @inventory = Inventory.find_by(pet_id: @pet.id)
     end
   end
 

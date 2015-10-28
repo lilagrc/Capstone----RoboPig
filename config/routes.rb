@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   # post "user/:id/profile/create", to: "pets#create", as: "create_pet"
 
   resources :users, only: [:show, :edit, :update]
-
   resources :pets, only: [:new, :create]
+  resources :inventories, only: [:new, :create, :edit, :update]
 
 
   post "regenerate", to: "pets#regenerate_token", as: "regenerate"

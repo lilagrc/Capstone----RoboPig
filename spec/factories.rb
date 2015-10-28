@@ -1,4 +1,9 @@
-FactoryGirl.define do  factory :schedule do
+FactoryGirl.define do  factory :inventory do
+    pet_id 1
+current_supply 1
+feeding_amount 1
+  end
+  factory :schedule do
     time "MyString"
   end
   factory :request do

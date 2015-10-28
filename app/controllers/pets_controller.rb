@@ -22,12 +22,10 @@ class PetsController < ApplicationController
   end
 
   def regenerate_token
-    user = User.find(session[:user_id])
-    pet = Pet.find(user.pet_id)
-    pet.api_key = Pet.generate_api_key
-    pet.save
+    @pet.api_key = Pet.generate_api_key
+    @pet.save
 
-    remove_pet_links(pet)
+    remove_pet_links(@pet)
 
     redirect_to user_path(session[:user_id])
   end

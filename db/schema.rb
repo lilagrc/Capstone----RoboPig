@@ -11,20 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151028195727) do
+ActiveRecord::Schema.define(version: 20151028221210) do
 
   create_table "feedings", force: :cascade do |t|
     t.datetime "date"
-    t.integer  "amount"
     t.integer  "pet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "inventories", force: :cascade do |t|
+    t.integer  "pet_id"
+    t.integer  "current_supply"
+    t.integer  "feeding_amount"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "pets", force: :cascade do |t|
     t.string   "name"
     t.string   "breed"
-    t.integer  "weight"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "api_key"
