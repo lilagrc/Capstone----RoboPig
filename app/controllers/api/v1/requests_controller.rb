@@ -22,13 +22,15 @@ class Api::V1::RequestsController < Api::ApiController
     key.slice!("Token token=")
     key.slice!("\"")
     key.slice!("\"")
-    pet = Pet.find_by(api_key: key)
-    @request = Request.find_by(pet_id: pet.id)
+    @pet = Pet.find_by(api_key: key)
+    @request = Request.find_by(pet_id: @pet.id)
 
     if params["request"] == "success"
       @request.update(body: nil, schedule: nil)
-      add_feeding(pet)
-      update_current_supply(pet)
+
+      add_feeding(@pet)
+
+      update_current_supply(@pet)
     end
 
     render :nothing => true
