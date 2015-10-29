@@ -6,10 +6,9 @@ class HomeController < ApplicationController
       @user = User.find(session[:user_id])
       if @user.pet_id != nil
         @pet = Pet.find(@user.pet_id)
+        find_num_feedings
       end
     end
-
-    find_num_feedings
   end
 
   def check_db
