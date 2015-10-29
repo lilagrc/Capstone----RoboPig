@@ -40,7 +40,7 @@ class Api::V1::RequestsController < Api::ApiController
 
   def add_feeding(pet)
     #only handles one pet per user for now
-    new_feeding = Feeding.create
+    new_feeding = Feeding.new
     new_feeding.pet_id = pet.id
     # new_feeding.date = Time.now.strftime(%I:%M,%m/%d/%y)
     new_feeding.save
