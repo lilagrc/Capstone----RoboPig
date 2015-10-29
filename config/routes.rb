@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :pets, only: [:new, :create]
   resources :inventories, only: [:new, :create, :edit, :update]
 
-
+  get "users/:id/remove_pet", to: "users#remove_pet", as: 'remove_pet'
   post "regenerate", to: "pets#regenerate_token", as: "regenerate"
   get "/schedules", to: "schedule#index", as: "schedules"
 

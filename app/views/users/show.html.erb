@@ -25,6 +25,8 @@
           <%= @pet.api_key %>
           <br>
           <%= button_to "Regenerate Pet Token", regenerate_path, class: "btn btn-default" %>
+          <br>
+          <%= button_to "Unlink to #{@pet.name}'s feeder", remove_pet_path(session[:user_id]), method: :get, class: "btn btn-default" %>
         </div>
       </div>
     </div>

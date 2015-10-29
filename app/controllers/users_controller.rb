@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_login
+  before_action :find_pet, only: :remove_pet
 
   def show
     @user = User.find(session[:user_id])
@@ -30,6 +31,13 @@ class UsersController < ApplicationController
       flash[:notice] = "This pet could not be found"
       redirect_to root_path
     end
+  end
+
+  def remove_pet
+    @user.pet_id = nil
+    @user.save
+    flash[:notice] = "You have successfully unlinked from the feeder."
+    redirect_to root_path
   end
 
   private

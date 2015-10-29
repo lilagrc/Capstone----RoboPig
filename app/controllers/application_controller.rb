@@ -8,9 +8,9 @@ class ApplicationController < ActionController::Base
   end
 
   def find_pet
-    if session[:user_id]
-      user = User.find(session[:user_id])
-      @pet = Pet.find(user.pet_id)
+    if session[:user_id] && User.find(session[:user_id]).pet_id != nil
+      @user = User.find(session[:user_id])
+      @pet = Pet.find(@user.pet_id)
     end
   end
 
