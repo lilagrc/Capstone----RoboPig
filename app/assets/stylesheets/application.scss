@@ -51,8 +51,8 @@ h5, h3 {
 h2 {
   /*border-radius: 10px;
   background-color: rgba(0, 0, 0, .1);*/
-  color: white;
-  padding: 1em;
+  /*color: white;
+  padding: 1em;*/
 }
 
 
@@ -73,7 +73,7 @@ h2 {
     background-color: rgb(255, 255, 255);
   }
 
-  #landing_page h3, h5 {
+  #landing_page h3 h5 {
     color: black;
     padding: 0px;
   }
@@ -124,6 +124,7 @@ h2 {
 
 #logged_in {
   display: inline;
+  color: black;
 }
 
 .schedule_form_header, li {
@@ -131,7 +132,7 @@ h2 {
   padding-top: 3px;
   margin: 5px;
   list-style-type: none;
-  padding-left: 1px;
+  padding-left: 2%;
   color: white;
 }
 
@@ -140,8 +141,10 @@ h2 {
   background-color: rgba(0, 0, 0, .5);
 }
 
+
 .schedule_form a {
   color: white;
+  text-decoration: underline;
 }
 
 iframe {
@@ -165,13 +168,22 @@ iframe {
 
 #scheduled_feedings {
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, .3);
+  background-color: white;
   padding-bottom: 5px;
   text-align: center;
 }
 
-#scheduled_feedings, h3 {
+#scheduled_feedings h3 {
   color: white;
+}
+
+.inventory_header {
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  padding-top: 5px;
+  padding-left: 7px;
+  padding-right: 5px;
 }
 
 /*footer {
