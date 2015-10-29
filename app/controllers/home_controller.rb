@@ -23,7 +23,7 @@ class HomeController < ApplicationController
   def find_num_feedings
   user = User.find(session[:user_id])
   pet = Pet.find(user.pet_id)
-  feedings = Feeding.where("created_at >= ? AND pet_id = ?", Time.zone.now.beginning_of_day, pet_id)
+  feedings = Feeding.where("created_at >= ? AND pet_id = ?", Time.zone.now.beginning_of_day, pet.id)
 
     @num_feedings = feedings.size
 
