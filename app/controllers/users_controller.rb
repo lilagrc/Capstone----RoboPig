@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     if pet != nil
       user.pet_id = pet.id
       user.save
-      redirect_to user_path
+      redirect_to root_path
     else
       flash[:notice] = "This pet could not be found"
       redirect_to root_path

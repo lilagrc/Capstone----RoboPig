@@ -41,6 +41,7 @@
         <div class="panel-body">
         <% if @inventory == nil %>
           Track food inventory
+          <br>
           <%= link_to "Add feeder information", new_inventory_path, class: "btn btn-default" %>
         <% end %>
         <% if @inventory != nil %>
@@ -48,6 +49,7 @@
           <br>
           <br>
           Update Current Supply
+          <br>
           <%= link_to "Update", edit_inventory_path, class: "btn btn-default" %>
         <% end %>
         </div>

@@ -15,7 +15,7 @@ class PetsController < ApplicationController
 
     if pet.save
         flash[:notice] = "Congratulations! You have now registered with Robo Pets. Please see your profile page for an API token which can be used for your robo device."
-        redirect_to user_path(session[:user_id])
+        redirect_to root_path
     else
       render 'new'
     end
