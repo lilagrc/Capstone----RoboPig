@@ -13,7 +13,6 @@ class HomeController < ApplicationController
   end
 
   def check_db
-
     feedings = find_num_feedings
 
     render json: {num: feedings}
