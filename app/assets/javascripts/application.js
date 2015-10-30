@@ -71,7 +71,7 @@ $(document).ready(function() {
 // ajax could hit url of check_db for values of request OR check for increased feedings.
 
 $(function() {
-    setTimeout(poll, 20000);
+    setTimeout(poll, 1000);
   });
 
 
@@ -92,7 +92,7 @@ function poll(){
           alert("Your pet has been fed!");
         }
 
-        setTimeout(poll, 20000);
+        setTimeout(poll, 1000);
       }
     })
   }
