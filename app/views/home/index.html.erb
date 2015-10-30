@@ -63,7 +63,9 @@
 
         </div>
         <br>
+      <% unless Schedule.all == [] %>
         <%= button_to "Cancel Feedings", cancel_path, method: :put, data: { confirm: "This will delete all schedule feedings. Proceed?"}, class: "btn btn-default", id: "cancel_button" %>
+      <% end %>
       </div>
     </div>
 
