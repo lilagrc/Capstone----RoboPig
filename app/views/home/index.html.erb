@@ -18,31 +18,31 @@
 
 <div class="page-header">
   <div class="dropdown">
-      <button type="button" class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" aria-label="Left Align">
-        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <% if logged_in? %>
-          <li><%= link_to "Profile", user_path(session[:user_id]) %></li>
-          <li><%= link_to "Log Out", logout_path %></li>
-        <% end %>
-      </ul>
-    </div>
-        <% today = Time.now.strftime("%I:%M,%m/%d") %>
-        <% url = "https://twitter.com/intent/tweet?text=Fed%20my%20fat%20cat%20at%20" + today.to_s + "%20via" %>
-        <a class="twitter-share-button" href=<%= url %> data-size="large" data-count value="none"> Tweet</a>
+    <button type="button" class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" aria-label="Left Align">
+      <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <% if logged_in? %>
+        <li><%= link_to "Profile", user_path(session[:user_id]) %></li>
+        <li><%= link_to "Log Out", logout_path %></li>
+      <% end %>
+    </ul>
+  </div>
+    <% today = Time.now.strftime("%I:%M,%m/%d") %>
+    <% url = "https://twitter.com/intent/tweet?text=Fed%20my%20fat%20cat%20at%20" + today.to_s + "%20via" %>
+    <a class="twitter-share-button" href=<%= url %> data-size="large" data-count value="none"> Tweet</a>
 </div>
 <% end %>
 
-  <div class="row" id="header_text">
-    <h1>Robo Feeder</h1>
-  </div>
+<div class="row" id="header_text">
+  <h1>Robo Feeder</h1>
+</div>
 
-  <div class="twitter_login">
-    <% unless logged_in? %>
-      <%= link_to image_tag('sign-in-with-twitter-gray.png'), login_path('twitter')%>
-    <% end %>
-  </div>
+<div class="twitter_login">
+  <% unless logged_in? %>
+    <%= link_to image_tag('sign-in-with-twitter-gray.png'), login_path('twitter')%>
+  <% end %>
+</div>
 
 <% if logged_in? %>
 <br>
@@ -70,10 +70,10 @@
   <% else %>
     <div class="row">
       <div class="col-xs-12", id="landing_page">
-          <h3><%= link_to "Register your robo feeder!",  new_pet_path(session[:user_id]) %></h3>
-          <h3><%= link_to "Find Feeder", edit_user_path(session[:user_id]) %></h3>
-          <h5>If you have been given access to a registered feeder, you can link to their account below. You will need the correct pet token.</h5>
-          <h3>Tutorial for Building Feeder </h3>
+        <h3><%= link_to "Register your robo feeder!",  new_pet_path(session[:user_id]) %></h3>
+        <h3><%= link_to "Find Feeder", edit_user_path(session[:user_id]) %></h3>
+        <h5>If you have been given access to a registered feeder, you can link to their account below. You will need the correct pet token.</h5>
+        <h3>Tutorial for Building Feeder </h3>
       </div>
   <% end %>
 <% else %>
@@ -82,7 +82,7 @@
   <br>
     <div class="row">
       <div class="col-xs-12", id="landing_page">
-        <h4>Robo Feed is a site for people wishing to build their own robot pet feeders. This site allows you to link up to your feeder and feed your pet remotely. Full tutorial instructions for building your own robot pet feeder are available here on Github</h4>
+        <h4>Robo Feed is a site for people wishing to build their own robot pet feeders. This site allows you to link up to your feeder and feed your pet remotely. Full tutorial instructions for building your own robot pet feeder are available <a href="https://github.com/lilagrc/Capstone----RoboPig/blob/master/Instructions.md">here</a> on Github</h4>
       </div>
     </div>
 <% end %>

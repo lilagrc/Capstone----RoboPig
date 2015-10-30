@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_login
 
-
   def show
     @user = User.find(session[:user_id])
     if @user.pet_id != nil
@@ -43,6 +42,15 @@ class UsersController < ApplicationController
   end
 
   private
+
+  # Final feature -- feedings past week
+  # def find_daily_average(pet)
+  #   feedings = Feeding.where("pet_id = ?", pet.id)
+
+  #   total_feedings = feedings.all.length
+
+
+  # end
 
   def create_params
     params.permit(user: [:pet_id])

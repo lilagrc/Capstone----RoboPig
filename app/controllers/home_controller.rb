@@ -1,6 +1,4 @@
 class HomeController < ApplicationController
-
-
   def index
     if session[:user_id]
       @user = User.find(session[:user_id])
@@ -11,6 +9,7 @@ class HomeController < ApplicationController
     end
   end
 
+  # Checks for updated feedings in DB and works with AJAX to trigger confirmation alert
   def check_db
     feedings = find_num_feedings
 
@@ -24,8 +23,9 @@ class HomeController < ApplicationController
   pet = Pet.find(user.pet_id)
   feedings = Feeding.where("created_at >= ? AND pet_id = ?", Time.zone.now.beginning_of_day, pet.id)
 
-    @num_feedings = feedings.size
+  @num_feedings = feedings.size
 
-    return @num_feedings
+  return @num_feedings
   end
+
 end

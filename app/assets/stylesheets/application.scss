@@ -48,59 +48,49 @@ h5, h3 {
   text-align: center;
 }
 
-h2 {
-  /*border-radius: 10px;
-  background-color: rgba(0, 0, 0, .1);*/
-  /*color: white;
-  padding: 1em;*/
+.col-xs-12 {
+  text-align: center;
 }
 
+#feed_details {
+  text-align: center;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, .1);
+}
 
+#landing_page {
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+}
 
- .col-xs-12 {
-    text-align: center;
-    /*background-color: rgba(183, 193, 193, .4);*/
-  }
+#landing_page h3 h5 {
+  color: black;
+  padding: 0px;
+}
 
-  #feed_details {
-    text-align: center;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, .1);
-  }
+#landing_page h5 {
+  margin-left: 12%;
+  margin-right: 12%;
+}
 
-  #landing_page {
-    border-radius: 10px;
-    background-color: rgb(255, 255, 255);
-  }
+#feed_button {
+  padding-left: 3em;
+  padding-right: 3em;
+}
 
-  #landing_page h3 h5 {
-    color: black;
-    padding: 0px;
-  }
+#cancel_button {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
 
-  #landing_page h5 {
-    margin-left: 12%;
-    margin-right: 12%;
-  }
+.page-header {
+  margin-top: 2px;
+  margin-bottom: 1px;
+}
 
-  #feed_button {
-    padding-left: 3em;
-    padding-right: 3em;
-  }
-
-  #cancel_button {
-    padding-left: 1.5em;
-    padding-right: 1.5em;
-  }
-
-  .page-header {
-    margin-top: 2px;
-    margin-bottom: 1px;
-  }
-
-  .twitter_login {
-    text-align: center;
-  }
+.twitter_login {
+  text-align: center;
+}
 
 
 #dropdownMenu1 {
@@ -185,38 +175,3 @@ iframe {
   padding-left: 7px;
   padding-right: 5px;
 }
-
-/*footer {
-  color: white;
-  text-align: center;
-  position:absolute;
-  bottom:0;
-  width:100%;
-  height:10px; /* Height of the footer */
-  /*padding-top: 5px;*/
-/*}*/
-
-/*
-h1 {
-  font-size: 60px;
-}*/
-/*
-  .dropdown {
-    float: right;
-  }*/
-/*
-
-
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a9db80+0,96c56f+100;Green+3D+%232 */
-/*.page-header {
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a9db80+0,96c56f+100;Green+3D+%232 */
-/*background: #a9db80; /* Old browsers */
-/*background: -moz-radial-gradient(center, ellipse cover,  #a9db80 0%, #96c56f 100%); /* FF3.6+ */
-/*background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#a9db80), color-stop(100%,#96c56f)); /* Chrome,Safari4+ */
-/*background: -webkit-radial-gradient(center, ellipse cover,  #a9db80 0%,#96c56f 100%); /* Chrome10+,Safari5.1+ */
-/*background: -o-radial-gradient(center, ellipse cover,  #a9db80 0%,#96c56f 100%); /* Opera 12+ */
-/*background: -ms-radial-gradient(center, ellipse cover,  #a9db80 0%,#96c56f 100%); /* IE10+ */
-/*: radial-gradient(ellipse at center,  #a9db80 0%,#96c56f 100%); /* W3C */
-/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a9db80', endColorstr='#96c56f',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-/*}
-*/

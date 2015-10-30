@@ -2,7 +2,7 @@ class PiController < ApplicationController
   before_action :require_login
   before_action :find_pet
 
-
+  # Updates API response to include feed request
   def feed_request
     request = Request.where(pet_id: @pet.id).first_or_initialize
     request.schedule = nil
@@ -23,6 +23,7 @@ class PiController < ApplicationController
     end
   end
 
+  # Updates API response to send schedule request
   def set_timer
     request = Request.find_by(pet_id: @pet.id)
     request.schedule = params["request"]["schedule"]
@@ -34,6 +35,7 @@ class PiController < ApplicationController
     redirect_to root_path
   end
 
+  # Updates API response to send cancel scheduled feedings request
   def cancel_feeding
     request = Request.find_by(pet_id: @pet.id)
     request.body = nil

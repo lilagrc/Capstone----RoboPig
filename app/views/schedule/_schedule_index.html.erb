@@ -1,4 +1,3 @@
-
 <% if @scheduled_feedings != []  %>
   <% @scheduled_feedings.each do |feeding| %>
     <h4>Everyday at <%= format_time(feeding.time) %></h4>
