@@ -39,7 +39,7 @@ The site serves as an API for your Raspberry Pi.The example code below will make
     + Instructions for SSH can be found in the [Pi documentation](https://www.raspberrypi.org/documentation/remote-access/ssh/unix.md). You must be on the same network as the Pi, and have information about the IP address of the Pi (you can find this by typing 'hostname -I' into the terminal).
     + If you want the ability to edit files in a text editor other than nano, then the intsructions [here](http://www.onenorth.com/blog/post/editing-files-on-raspberry-pi-with-local-sublime) are excellent for getting set up using sublime. You SSH into the Pi, and open and work on files from the Pi on your machine. 
 - Code
-    + Servo Code
+    + Servo Code  
         The code to move the servo is quite simple.   
         ```python
         import RPi.GPIO as GPIO
@@ -62,7 +62,7 @@ The site serves as an API for your Raspberry Pi.The example code below will make
         servo.stop()
 
         url = 'http://www.robofeedpet.com/api/v1/requests/confirmation'
-        headers = {'Authorization': 'Token token="cprEhA7dnDaYfNltctmAtgtt"'}
+        headers = {'Authorization': 'Token token="YOUR TOKEN HERE"'}
         payload = {'request': 'success'}
         r = requests.put(url, json=payload, headers=headers)
         ```
@@ -76,7 +76,7 @@ The site serves as an API for your Raspberry Pi.The example code below will make
 
         # r = requests.put('http://www.robofeedpet.com/run_pi', data = {"feed":"yes"})
         url = 'http://www.robofeedpet.com/api/v1/requests/new'
-        headers = {'Authorization': 'Token token="cprEhA7dnDaYfNltctmAtgtt"'}
+        headers = {'Authorization': 'Token token="YOUR TOKEN HERE"'}
         r = requests.get(url, headers=headers)
 
         r = r.json()
@@ -162,7 +162,7 @@ The site serves as an API for your Raspberry Pi.The example code below will make
     + Place servo on bolts to hold into place
 
 ## Put it all together
-- In the python code examples above, replace the "token" with the token provided by the Robo Feeder account
+- In the python code examples above, replace the "YOUR TOKEN HERE" with the token provided in you Robo Feeder account.
 - Test!
 
     

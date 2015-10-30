@@ -1,25 +1,24 @@
+<p class="schedule_form_header">
+  <ul>
+    <li>Hours are in military time (0-23, 13 = 1pm).</li>
+    <li>This will feed your pet at the same time each day.</li>
+    <li>You can only enter one feeding at a time.</li>
+  </ul>
+</p>
 
-  <p class="schedule_form_header">
-    <ul>
-      <li>Hours are in military time (0-23, 13 = 1pm).</li>
-      <li>This will feed your pet at the same time each day.</li>
-      <li>You can only enter one feeding at a time.</li>
-    </ul>
-  </p>
+<div class="row">
+  <div class="col-md-6">
+    <%= form_for @request, url: timer_path do |f| %>
+      <div class="form-group">
+        <fieldset>
+          <%= f.label "Feed Time", class: "schedule_label" %>
+          <%= f.select :schedule, options_for_select(0..23) %>
 
-  <div class="row">
-    <div class="col-md-6">
-      <%= form_for @request, url: timer_path do |f| %>
-        <div class="form-group">
-          <fieldset>
-            <%= f.label "Feed Time", class: "schedule_label" %>
-            <%= f.select :schedule, options_for_select(0..23) %>
-
-            <%= f.submit "Submit", class: "btn btn-default" %>
-          </fieldset>
-        </div>
-      <% end %>
-      <p><%= link_to "View current feeding schedule", schedules_path  %></p>
-    </div>
+          <%= f.submit "Submit", class: "btn btn-default" %>
+        </fieldset>
+      </div>
+    <% end %>
+    <p><%= link_to "View current feeding schedule", schedules_path  %></p>
   </div>
+</div>
 
